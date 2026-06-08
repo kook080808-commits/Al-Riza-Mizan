@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statConf) window.animateCounter(statConf, 100);
 
   // ── LICENSE FULLSCREEN LIGHTBOX ──
-  const trigger = document.getElementById('contact-license-trigger');
+  const triggers = document.querySelectorAll('.credential-modal-trigger');
   const modal = document.getElementById('license-modal');
   const closeBtn = document.getElementById('license-modal-close');
   const modalImg = document.getElementById('modal-image');
@@ -211,14 +211,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   };
 
-  if (trigger && modal && closeBtn && modalImg) {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.style.display = 'flex';
-      modal.offsetHeight;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      resetZoomState();
+  if (triggers.length > 0 && modal && closeBtn && modalImg) {
+    triggers.forEach(t => {
+      t.addEventListener('click', (e) => {
+        e.preventDefault();
+        const childImg = t.querySelector('img');
+        if (childImg) {
+          modalImg.src = childImg.src;
+          if (childImg.style.filter) {
+            modalImg.style.filter = childImg.style.filter;
+          } else {
+            modalImg.style.filter = '';
+          }
+        }
+        modal.style.display = 'flex';
+        modal.offsetHeight;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        resetZoomState();
+      });
     });
 
     const closeModal = () => {
