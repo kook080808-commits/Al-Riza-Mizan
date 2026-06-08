@@ -147,7 +147,13 @@ window.animateCounter = function(el, target) {
   const step = target / 60;
   const interval = setInterval(() => {
     count = Math.min(count + step, target);
-    el.textContent = (target >= 100 ? Math.round(count) + '%' : Math.round(count) + (target === 2026 ? '' : '+'));
+    if (target === 100) {
+      el.textContent = Math.round(count) + '%';
+    } else if (target === 2026) {
+      el.textContent = Math.round(count);
+    } else {
+      el.textContent = Math.round(count) + '+';
+    }
     if (count >= target) clearInterval(interval);
   }, 25);
 };
