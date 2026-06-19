@@ -1,716 +1,853 @@
 ﻿<!DOCTYPE html>
 <html lang="uz">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="8qfF8cfsDvnczFIdI3GTRm4zK4eyX3NDEBxUQMn1sfA" />
-<meta name="description" content="AL-RIZA MIZAN Advokatlik Byurosi - Huquqiy masalalaringiz uchun ishonchli va professional yechim. Guliston, Sirdaryo viloyati, O'zbekiston.">
-<meta name="keywords" content="advokat, advokatlik byurosi, huquqiy yordam, yuridik xizmatlar, fuqarolik ishlari, jinoyat ishlari, Guliston, Sirdaryo, O'zbekiston">
-<meta name="robots" content="index, follow">
-<meta name="author" content="AL-RIZA MIZAN Advokatlik Byurosi">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="8qfF8cfsDvnczFIdI3GTRm4zK4eyX3NDEBxUQMn1sfA" />
+  <meta name="description"
+    content="AL-RIZA MIZAN Advokatlik Byurosi - Huquqiy masalalaringiz uchun ishonchli va professional yechim. Guliston, Sirdaryo viloyati, O'zbekiston.">
+  <meta name="keywords"
+    content="advokat, advokatlik byurosi, huquqiy yordam, yuridik xizmatlar, fuqarolik ishlari, jinoyat ishlari, Guliston, Sirdaryo, O'zbekiston">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="AL-RIZA MIZAN Advokatlik Byurosi">
 
-<meta property="og:title" content="AL-RIZA MIZAN — Advokatlik Byurosi">
-<meta property="og:description" content="Huquqiy masalalaringiz uchun ishonchli va professional yechim. Guliston, Sirdaryo viloyati, O'zbekiston.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://al-riza-mizan.vercel.app/">
-<meta property="og:image" content="https://al-riza-mizan.vercel.app/IMG/Favicon.png">
+  <meta property="og:title" content="AL-RIZA MIZAN — Advokatlik Byurosi">
+  <meta property="og:description"
+    content="Huquqiy masalalaringiz uchun ishonchli va professional yechim. Guliston, Sirdaryo viloyati, O'zbekiston.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://al-riza-mizan.vercel.app/">
+  <meta property="og:image" content="https://al-riza-mizan.vercel.app/IMG/Favicon.png">
 
-<link rel="canonical" href="https://al-riza-mizan.vercel.app/">
-<title>AL-RIZA MIZAN — Advokatlik Byurosi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="./IMG/Favicon.png">
+  <link rel="canonical" href="https://al-riza-mizan.vercel.app/">
+  <title>AL-RIZA MIZAN — Advokatlik Byurosi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./IMG/Favicon.png">
 </head>
+
 <body class="lang-uz">
 
-<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-logo"></div>
-  <div class="loader-text">AL-RIZA MIZAN</div>
-</div>
-
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- BACK TO TOP -->
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
-<nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <div class="nav-logo-emblem"><img src="./IMG/Logo.png" alt="⚖" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
-    <div class="nav-logo-text">
-      <span class="brand">AL-RIZA MIZAN</span>
-      <span class="tagline">Advokatlik Byurosi</span>
-    </div>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home"><span data-lang-inline="uz">Bosh sahifa</span><span data-lang-inline="ru">Главная</span><span data-lang-inline="en">Home</span></a></li>
-    <li><a href="#about"><span data-lang-inline="uz">Biz haqimizda</span><span data-lang-inline="ru">О нас</span><span data-lang-inline="en">About</span></a></li>
-    <li><a href="#services"><span data-lang-inline="uz">Xizmatlar</span><span data-lang-inline="ru">Услуги</span><span data-lang-inline="en">Services</span></a></li>
-    <li><a href="#advantages"><span data-lang-inline="uz">Afzalliklar</span><span data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Why Us</span></a></li>
-    <li><a href="#contact"><span data-lang-inline="uz">Aloqa</span><span data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></a></li>
-  </ul>
-
-  <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
-    <button class="lang-btn" onclick="setLang('ru')">RU</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo"></div>
+    <div class="loader-text">AL-RIZA MIZAN</div>
   </div>
 
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobile()"><span data-lang-inline="uz">Bosh sahifa</span><span data-lang-inline="ru">Главная</span><span data-lang-inline="en">Home</span></a>
-  <a href="#about" onclick="closeMobile()"><span data-lang-inline="uz">Biz haqimizda</span><span data-lang-inline="ru">О нас</span><span data-lang-inline="en">About</span></a>
-  <a href="#services" onclick="closeMobile()"><span data-lang-inline="uz">Xizmatlar</span><span data-lang-inline="ru">Услуги</span><span data-lang-inline="en">Services</span></a>
-  <a href="#advantages" onclick="closeMobile()"><span data-lang-inline="uz">Afzalliklar</span><span data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Why Us</span></a>
-  <a href="#contact" onclick="closeMobile()"><span data-lang-inline="uz">Aloqa</span><span data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></a>
-  <div class="lang-switcher" style="margin-top:0.5rem">
-    <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
-    <button class="lang-btn" onclick="setLang('ru')">RU</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-  </div>
-</div>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
-<section id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid-overlay"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-eyebrow">
-        <span data-lang-inline="uz">Huquqiy Xizmatlar</span>
-        <span data-lang-inline="ru">Юридические Услуги</span>
-        <span data-lang-inline="en">Legal Services</span>
-        &nbsp;· Guliston, O'zbekiston
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-emblem"><img src="./IMG/Logo.png" alt="⚖"
+          style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+      <div class="nav-logo-text">
+        <span class="brand">AL-RIZA MIZAN</span>
+        <span class="tagline">Advokatlik Byurosi</span>
       </div>
-
-      <h1 class="hero-title">
-        <span data-lang="uz"><em>AL-RIZA</em><strong>MIZAN</strong>Advokatlik Byurosi</span>
-        <span data-lang="ru"><em>AL-RIZA</em><strong>MIZAN</strong>Адвокатское Бюро</span>
-        <span data-lang="en"><em>AL-RIZA</em><strong>MIZAN</strong>Law Office</span>
-      </h1>
-
-      <div class="hero-divider"></div>
-
-      <p class="hero-subtitle">
-        <span data-lang-inline="uz">Huquqiy masalalaringiz uchun ishonchli va professional yechim.</span>
-        <span data-lang-inline="ru">Надёжное и профессиональное решение ваших правовых вопросов.</span>
-        <span data-lang-inline="en">Trusted and professional solutions for your legal matters.</span>
-      </p>
-
-      <p class="hero-desc">
-        <span data-lang-inline="uz">AL-RIZA MIZAN Advokatlik Byurosi jismoniy va yuridik shaxslarga malakali huquqiy yordam ko'rsatadi. Biz mijozlar manfaatlarini himoya qilish, huquqiy maslahat berish va sudlarda vakillik qilish xizmatlarini taklif etamiz.</span>
-        <span data-lang-inline="ru">Адвокатское бюро AL-RIZA MIZAN оказывает квалифицированную юридическую помощь физическим и юридическим лицам. Мы предлагаем услуги по защите интересов клиентов, юридическому консультированию и представительству в судах.</span>
-        <span data-lang-inline="en">AL-RIZA MIZAN Law Office provides qualified legal assistance to individuals and legal entities. We offer services in protecting client interests, legal consulting, and court representation.</span>
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
-          <span>
-            <span data-lang-inline="uz">Bepul maslahat olish</span>
-            <span data-lang-inline="ru">Бесплатная консультация</span>
-            <span data-lang-inline="en">Free Consultation</span>
-          </span>
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat-item">
-          <div class="hero-stat-num">
-            <span id="stat-founded">2026</span><span data-lang-inline="uz">-yil</span><span data-lang-inline="ru"> год</span><span data-lang-inline="en"></span>
-          </div>
-          <div class="hero-stat-label"><span data-lang-inline="uz">Tashkil etilgan</span><span data-lang-inline="ru">Основан</span><span data-lang-inline="en">Founded</span></div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-num" id="stat-services">9+</div>
-          <div class="hero-stat-label"><span data-lang-inline="uz">Xizmat turlari</span><span data-lang-inline="ru">Видов услуг</span><span data-lang-inline="en">Service types</span></div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-num" id="stat-conf">100%</div>
-          <div class="hero-stat-label"><span data-lang-inline="uz">Maxfiylik</span><span data-lang-inline="ru">Конфиденциальность</span><span data-lang-inline="en">Confidentiality</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-card">
-        <img src="./IMG/Logo.png" alt="⚖️" class="hero-scales" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1.5rem; border: 3px solid var(--gold); box-shadow: 0 0 30px rgba(212,175,55,0.5);">
-        <div class="hero-card-title">AL-RIZA MIZAN</div>
-        <div class="hero-card-sub">
-          <span data-lang-inline="uz">Advokatlik Byurosi</span>
-          <span data-lang-inline="ru">Адвокатское Бюро</span>
-          <span data-lang-inline="en">Law Office</span>
-        </div>
-        <ul class="hero-card-list">
-          <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Huquqiy maslahat</span><span data-lang-inline="ru">Юридическая консультация</span><span data-lang-inline="en">Legal Consulting</span></li>
-          <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Sudlarda vakillik</span><span data-lang-inline="ru">Представительство в суде</span><span data-lang-inline="en">Court Representation</span></li>
-          <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Shartnomalar tayyorlash</span><span data-lang-inline="ru">Составление договоров</span><span data-lang-inline="en">Contract Drafting</span></li>
-          <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Korxonalar uchun xizmatlar</span><span data-lang-inline="ru">Услуги для компаний</span><span data-lang-inline="en">Corporate Services</span></li>
-          <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Iqtisodiy nizolar</span><span data-lang-inline="ru">Экономические споры</span><span data-lang-inline="en">Economic Disputes</span></li>
-        </ul>
-        <div class="hero-card-badge">
-          <span data-lang-inline="uz">Bepul maslahat</span>
-          <span data-lang-inline="ru">Бесплатно</span>
-          <span data-lang-inline="en">Free Consult</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
-<section id="about">
-  <div class="about-grid reveal">
-    <div class="about-visual">
-      <div class="about-img-wrapper">
-        <img src="./IMG/Logo.png" alt="⚖️" class="about-emblem" style="width: 170px; height: 170px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); box-shadow: 0 0 40px rgba(212,175,55,0.4);">
-        <div class="about-year">2026</div>
-        <div class="about-corner"></div>
-        <div class="about-corner-bl"></div>
-      </div>
-    </div>
-
-    <div class="about-content reveal">
-      <div class="section-eyebrow">
-        <span data-lang-inline="uz">Biz haqimizda</span>
-        <span data-lang-inline="ru">О нас</span>
-        <span data-lang-inline="en">About Us</span>
-      </div>
-      <h2 class="section-title" style="text-align:left;">
-        <span data-lang="uz">Ishonchli huquqiy <em>himoyachilar</em></span>
-        <span data-lang="ru">Надёжные правовые <em>защитники</em></span>
-        <span data-lang="en">Trusted Legal <em>Advocates</em></span>
-      </h2>
-      <div class="section-divider" style="margin-left:0;"></div>
-
-      <p class="about-text">
-        <span data-lang="uz">AL-RIZA MIZAN Advokatlik Byurosi 2026-yilda tashkil etilgan bo'lib, fuqarolik, iqtisodiy, ma'muriy va boshqa huquqiy masalalarda professional xizmatlar ko'rsatishga ixtisoslashgan. Bizning bosh maqsadimiz — "Adolat Ruhini Uyg'otish"dir.</span>
-        <span data-lang="ru">Адвокатское бюро AL-RIZA MIZAN основано в 2026 году и специализируется на оказании профессиональных услуг в области гражданского, экономического, административного и других отраслей права. Наша главная цель — «Пробудить Дух Справедливости».</span>
-        <span data-lang-inline="en">AL-RIZA MIZAN Law Office was established in 2026, specializing in providing professional services in civil, economic, administrative and other legal matters. Our ultimate goal is "Awakening the Spirit of Justice".</span>
-      </p>
-
-      <div class="about-cards">
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fa-solid fa-bullseye"></i></div>
-          <div class="about-card-title">
-            <span data-lang-inline="uz">Shiyor</span>
-            <span data-lang-inline="ru">Девиз</span>
-            <span data-lang-inline="en">Motto</span>
-          </div>
-          <div class="about-card-text">
-            <span data-lang-inline="uz">Qonun ustuvorligi va har bir inson huquqlarining ishonchli himoyasi — bizning bosh maqsadimizdir.</span>
-            <span data-lang-inline="ru">Верховенство закона и надёжная защита прав каждого человека — наша главная цель.</span>
-            <span data-lang-inline="en">The rule of law and reliable protection of everyone's rights is our main goal.</span>
-          </div>
-        </div>
-
-        <a href="#credentials" class="about-card" style="text-decoration: none; display: block; border: 1.5px solid rgba(212,175,55,0.4);">
-          <div class="about-card-icon"><i class="fa-solid fa-scroll"></i></div>
-          <div class="about-card-title">
-            <span data-lang-inline="uz">Litsenziya</span>
-            <span data-lang-inline="ru">Лицензия</span>
-            <span data-lang-inline="en">License</span>
-          </div>
-          <div class="about-card-text" style="color: rgba(255,255,255,0.7);">
-            <span data-lang-inline="uz">№ 1348174. Ma'muriy, jinoiy, fuqarolik va iqtisodiy sud ishlarini yuritish (Faol).</span>
-            <span data-lang-inline="ru">№ 1348174. Ведение административных, уголовных, гражданских и экономических дел (Активна).</span>
-            <span data-lang-inline="en">No. 1348174. Conduct of administrative, criminal, civil, and economic court cases (Active).</span>
-          </div>
-          <div class="about-card-arrow">
-            <span data-lang-inline="uz">Batafsil ko'rish</span>
-            <span data-lang-inline="ru">Подробнее</span>
-            <span data-lang-inline="en">View Details</span>
-          </div>
-        </a>
-
-        <a href="#credentials" class="about-card" style="text-decoration: none; display: block; border: 1.5px solid rgba(212,175,55,0.4);">
-          <div class="about-card-icon"><i class="fa-solid fa-file-contract"></i></div>
-          <div class="about-card-title">
-            <span data-lang-inline="uz">Guvohnoma</span>
-            <span data-lang-inline="ru">Свидетельство</span>
-            <span data-lang-inline="en">Certificate</span>
-          </div>
-          <div class="about-card-text" style="color: rgba(255,255,255,0.7);">
-            <span data-lang-inline="uz">Davlat ro'yxatidan o'tgan (Faol). AL-RIZA MIZAN advokatlik byurosi rasmiy davlat reyestrida mavjud.</span>
-            <span data-lang-inline="ru">Государственная регистрация (Активно). Адвокатское бюро AL-RIZA MIZAN внесено в гос. реестр.</span>
-            <span data-lang-inline="en">State registered (Active). AL-RIZA MIZAN law office is registered in the state registry.</span>
-          </div>
-          <div class="about-card-arrow">
-            <span data-lang-inline="uz">Batafsil ko'rish</span>
-            <span data-lang-inline="ru">Подробнее</span>
-            <span data-lang-inline="en">View Details</span>
-          </div>
-        </a>
-
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fa-solid fa-eye"></i></div>
-          <div class="about-card-title">
-            <span data-lang-inline="uz">Maqsadimiz</span>
-            <span data-lang-inline="ru">Наша Цель</span>
-            <span data-lang-inline="en">Our Goal</span>
-          </div>
-          <div class="about-card-text">
-            <span data-lang-inline="uz">"Adolat Ruhini Uyg'otish" — bizning har bir ish va himoyadagi bosh maqsadimizdir.</span>
-            <span data-lang-inline="ru">«Пробудить Дух Справедливости» — наша главная цель и закон в каждом деле.</span>
-            <span data-lang-inline="en">"Awakening the Spirit of Justice" — is our primary goal and law in every case.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════ SERVICES ═══════════════════════════════════════ -->
-<section id="services">
-  <div class="section-eyebrow">
-    <span data-lang-inline="uz">Bizning Xizmatlar</span>
-    <span data-lang-inline="ru">Наши Услуги</span>
-    <span data-lang-inline="en">Our Services</span>
-  </div>
-  <h2 class="section-title reveal">
-    <span data-lang="uz">Professional <em>Huquqiy Xizmatlar</em></span>
-    <span data-lang="ru">Профессиональные <em>Юридические Услуги</em></span>
-    <span data-lang-inline="en">Professional <em>Legal Services</em></span>
-  </h2>
-  <div class="section-divider"></div>
-  <p class="section-desc reveal">
-    <span data-lang-inline="uz">Har bir mijozga individual yondashuv bilan sifatli huquqiy xizmat ko'rsatamiz.</span>
-    <span data-lang-inline="ru">Качественные юридические услуги с индивидуальным подходом к каждому клиенту.</span>
-    <span data-lang-inline="en">Quality legal services with an individual approach to each client.</span>
-  </p>
-
-  <div class="services-grid">
-    <!-- Card 1 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">01</div>
-      <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Huquqiy maslahat</span>
-        <span data-lang-inline="ru">Юридическая консультация</span>
-        <span data-lang-inline="en">Legal Consulting</span>
-      </h3>
-      <p class="service-desc">
-         <span data-lang-inline="uz">Har qanday huquqiy masalalar bo'yicha professional maslahat va yo'riqnoma beramiz.</span>
-        <span data-lang-inline="ru">Профессиональные консультации и руководство по любым правовым вопросам.</span>
-        <span data-lang-inline="en">Professional advice and guidance on any legal matters.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
     </a>
-    <!-- Card 2 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">02</div>
-      <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Sudlarda vakillik</span>
-        <span data-lang-inline="ru">Представительство в суде</span>
-        <span data-lang-inline="en">Court Representation</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Barcha turdagi sudlarda sizning manfaatlaringizni professional himoya qilamiz.</span>
-        <span data-lang-inline="ru">Профессиональная защита ваших интересов во всех видах судов.</span>
-        <span data-lang-inline="en">Professional protection of your interests in all types of courts.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 3 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">03</div>
-      <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Shartnomalar tayyorlash</span>
-        <span data-lang-inline="ru">Составление договоров</span>
-        <span data-lang-inline="en">Contract Drafting</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Har qanday murakkablikdagi shartnomalarni qonuniy asosda tayyorlab beramiz.</span>
-        <span data-lang-inline="ru">Составление договоров любой сложности на законной основе.</span>
-        <span data-lang-inline="en">Drafting contracts of any complexity on a legal basis.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 4 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">04</div>
-      <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Korxonalar uchun xizmatlar</span>
-        <span data-lang-inline="ru">Услуги для предприятий</span>
-        <span data-lang-inline="en">Corporate Legal Services</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Yuridik shaxslar va korxonalarga keng qamrovli huquqiy yordam ko'rsatamiz.</span>
-        <span data-lang-inline="ru">Комплексная юридическая помощь юридическим лицам и предприятиям.</span>
-        <span data-lang-inline="en">Comprehensive legal assistance to legal entities and businesses.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 5 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">05</div>
-      <div class="service-icon"><i class="fa-solid fa-users"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Fuqarolik ishlari</span>
-        <span data-lang-inline="ru">Гражданские дела</span>
-        <span data-lang-inline="en">Civil Matters</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Oila, meros, mulk va boshqa fuqarolik masalalarida professional yordam.</span>
-        <span data-lang-inline="ru">Профессиональная помощь в семейных, наследственных, имущественных делах.</span>
-        <span data-lang-inline="en">Professional help in family, inheritance, property and other civil matters.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 6 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">06</div>
-      <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Iqtisodiy nizolar</span>
-        <span data-lang-inline="ru">Экономические споры</span>
-        <span data-lang-inline="en">Economic Disputes</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Iqtisodiy sudlarda nizolarni hal qilishda malakali yuridik yordamimiz.</span>
-        <span data-lang-inline="ru">Квалифицированная юридическая помощь в разрешении споров в экономических судах.</span>
-        <span data-lang-inline="en">Qualified legal assistance in resolving disputes in economic courts.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 7 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">07</div>
-      <div class="service-icon"><i class="fa-solid fa-landmark"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Ma'muriy ishlar</span>
-        <span data-lang-inline="ru">Административные дела</span>
-        <span data-lang-inline="en">Administrative Cases</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Davlat organlari bilan munosabatlarda huquqiy himoya va vakillik.</span>
-        <span data-lang-inline="ru">Правовая защита и представительство в отношениях с государственными органами.</span>
-        <span data-lang-inline="en">Legal protection and representation in relations with government bodies.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 8 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">08</div>
-      <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Hujjatlarni ekspertiza</span>
-        <span data-lang-inline="ru">Правовая экспертиза</span>
-        <span data-lang-inline="en">Legal Document Review</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Hujjatlarni huquqiy ekspertizadan o'tkazish va tahlil qilish xizmati.</span>
-        <span data-lang-inline="ru">Услуга правовой экспертизы и анализа документов.</span>
-        <span data-lang-inline="en">Legal examination and analysis of documents service.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-    <!-- Card 9 -->
-    <a href="#contact" class="service-card reveal">
-      <div class="service-num">09</div>
-      <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-      <h3 class="service-title">
-        <span data-lang-inline="uz">Jinoyat ishlarida himoya</span>
-        <span data-lang-inline="ru">Защита по уголовным делам</span>
-        <span data-lang-inline="en">Criminal Defense</span>
-      </h3>
-      <p class="service-desc">
-        <span data-lang-inline="uz">Jinoyat ishlari bo'yicha tergov va sud bosqichlarida ishonchli va professional himoya.</span>
-        <span data-lang-inline="ru">Надёжная и профессиональная защита на стадиях следствия и суда по уголовным делам.</span>
-        <span data-lang-inline="en">Reliable and professional defense during the investigation and trial stages of criminal cases.</span>
-      </p>
-      <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
-    </a>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════ ADVANTAGES ═══════════════════════════════════════ -->
-<section id="advantages">
-  <div class="section-eyebrow">
-    <span data-lang-inline="uz">Nima uchun biz</span>
-    <span data-lang-inline="ru">Почему мы</span>
-    <span data-lang-inline="en">Why Choose Us</span>
-  </div>
-  <h2 class="section-title reveal">
-    <span data-lang="uz">Bizning <em>Afzalliklarimiz</em></span>
-    <span data-lang-inline="ru">Наши <em>Преимущества</em></span>
-    <span data-lang-inline="en">Our <em>Advantages</em></span>
-  </h2>
-  <div class="section-divider"></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"><span data-lang-inline="uz">Bosh sahifa</span><span data-lang-inline="ru">Главная</span><span
+            data-lang-inline="en">Home</span></a></li>
+      <li><a href="#about"><span data-lang-inline="uz">Biz haqimizda</span><span data-lang-inline="ru">О нас</span><span
+            data-lang-inline="en">About</span></a></li>
+      <li><a href="#services"><span data-lang-inline="uz">Xizmatlar</span><span data-lang-inline="ru">Услуги</span><span
+            data-lang-inline="en">Services</span></a></li>
+      <li><a href="#advantages"><span data-lang-inline="uz">Afzalliklar</span><span
+            data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Why Us</span></a></li>
+      <li><a href="#contact"><span data-lang-inline="uz">Aloqa</span><span data-lang-inline="ru">Контакты</span><span
+            data-lang-inline="en">Contact</span></a></li>
+    </ul>
 
-  <div class="advantages-grid">
-    <div class="adv-card reveal">
-      <span class="adv-icon"><i class="fa-solid fa-bullseye"></i></span>
-      <div class="adv-check"><i class="fa-solid fa-check"></i></div>
-      <div class="adv-title"><span data-lang-inline="uz">Professional yondashuv</span><span data-lang-inline="ru">Профессиональный подход</span><span data-lang-inline="en">Professional Approach</span></div>
-      <p class="adv-desc"><span data-lang-inline="uz">Har bir ish bo'yicha yuqori darajadagi professional yondashuv va tajriba.</span><span data-lang-inline="ru">Высокий профессиональный подход и опыт по каждому делу.</span><span data-lang-inline="en">High-level professional approach and expertise on every case.</span></p>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <div class="adv-card reveal">
-      <span class="adv-icon"><i class="fa-solid fa-lock"></i></span>
-      <div class="adv-check"><i class="fa-solid fa-check"></i></div>
-      <div class="adv-title"><span data-lang-inline="uz">Maxfiylik kafolati</span><span data-lang-inline="ru">Гарантия конфиденциальности</span><span data-lang-inline="en">Confidentiality Guarantee</span></div>
-      <p class="adv-desc"><span data-lang-inline="uz">Mijoz ma'lumotlari to'liq maxfiy saqlanadi va uchinchi shaxslarga berilmaydi.</span><span data-lang-inline="ru">Данные клиентов полностью конфиденциальны и не передаются третьим лицам.</span><span data-lang-inline="en">Client data is fully confidential and not shared with third parties.</span></p>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
-    <div class="adv-card reveal">
-      <span class="adv-icon"><i class="fa-solid fa-bolt"></i></span>
-      <div class="adv-check"><i class="fa-solid fa-check"></i></div>
-      <div class="adv-title"><span data-lang-inline="uz">Tezkor xizmat</span><span data-lang-inline="ru">Оперативное обслуживание</span><span data-lang-inline="en">Fast Service</span></div>
-      <p class="adv-desc"><span data-lang-inline="uz">Murojaat qilingan paytdan boshlab tez va samarali huquqiy yordam ko'rsatamiz.</span><span data-lang-inline="ru">Быстрая и эффективная юридическая помощь с момента обращения.</span><span data-lang-inline="en">Fast and effective legal assistance from the moment of application.</span></p>
-    </div>
-    <div class="adv-card reveal">
-      <span class="adv-icon"><i class="fa-solid fa-user-tie"></i></span>
-      <div class="adv-check"><i class="fa-solid fa-check"></i></div>
-      <div class="adv-title"><span data-lang-inline="uz">Individual yechimlar</span><span data-lang-inline="ru">Индивидуальные решения</span><span data-lang-inline="en">Individual Solutions</span></div>
-      <p class="adv-desc"><span data-lang-inline="uz">Har bir mijozga alohida yondashuv va individual yechimlar taqdim etamiz.</span><span data-lang-inline="ru">Индивидуальный подход и решения для каждого клиента.</span><span data-lang-inline="en">Individual approach and solutions for every client.</span></p>
-    </div>
-    <div class="adv-card reveal">
-      <span class="adv-icon"><i class="fa-solid fa-shield-halved"></i></span>
-      <div class="adv-check"><i class="fa-solid fa-check"></i></div>
-      <div class="adv-title"><span data-lang-inline="uz">Ishonchli himoya</span><span data-lang-inline="ru">Надёжная защита</span><span data-lang-inline="en">Reliable Protection</span></div>
-      <p class="adv-desc"><span data-lang-inline="uz">Sizning huquqlaringiz va manfaatlaringizni to'liq va ishonchli himoya qilamiz.</span><span data-lang-inline="ru">Полная и надёжная защита ваших прав и интересов.</span><span data-lang-inline="en">Full and reliable protection of your rights and interests.</span></p>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()"><span data-lang-inline="uz">Bosh sahifa</span><span
+        data-lang-inline="ru">Главная</span><span data-lang-inline="en">Home</span></a>
+    <a href="#about" onclick="closeMobile()"><span data-lang-inline="uz">Biz haqimizda</span><span
+        data-lang-inline="ru">О нас</span><span data-lang-inline="en">About</span></a>
+    <a href="#services" onclick="closeMobile()"><span data-lang-inline="uz">Xizmatlar</span><span
+        data-lang-inline="ru">Услуги</span><span data-lang-inline="en">Services</span></a>
+    <a href="#advantages" onclick="closeMobile()"><span data-lang-inline="uz">Afzalliklar</span><span
+        data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Why Us</span></a>
+    <a href="#contact" onclick="closeMobile()"><span data-lang-inline="uz">Aloqa</span><span
+        data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></a>
+    <div class="lang-switcher" style="margin-top:0.5rem">
+      <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </div>
-</section>
 
-<!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
-<section id="contact">
-  <div class="section-eyebrow">
-    <span data-lang-inline="uz">Aloqa</span>
-    <span data-lang-inline="ru">Контакты</span>
-    <span data-lang-inline="en">Contact</span>
-  </div>
-  <h2 class="section-title reveal">
-    <span data-lang="uz">Biz bilan <em>Bog'laning</em></span>
-    <span data-lang-inline="ru">Свяжитесь <em>с нами</em></span>
-    <span data-lang-inline="en">Get in <em>Touch</em></span>
-  </h2>
-  <div class="section-divider"></div>
-  <p class="section-desc reveal">
-    <span data-lang-inline="uz">Birinchi maslahat bepul. Bugun murojaat qiling.</span>
-    <span data-lang-inline="ru">Первая консультация бесплатно. Обратитесь сегодня.</span>
-    <span data-lang-inline="en">First consultation is free. Contact us today.</span>
-  </p>
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
 
-  <div class="contact-centered-wrapper reveal">
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
-        <div>
-          <div class="contact-label"><span data-lang-inline="uz">Kompaniya</span><span data-lang-inline="ru">Компания</span><span data-lang-inline="en">Company</span></div>
-          <div class="contact-value">AL-RIZA MIZAN Advokatlik Byurosi<br><small>STIR: 312881361</small></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span data-lang-inline="uz">Huquqiy Xizmatlar</span>
+          <span data-lang-inline="ru">Юридические Услуги</span>
+          <span data-lang-inline="en">Legal Services</span>
+          &nbsp;· Guliston, O'zbekiston
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon-wrap"><i class="fa-solid fa-gavel"></i></div>
-        <div>
-          <div class="contact-label"><span data-lang-inline="uz">Direktor</span><span data-lang-inline="ru">Директор</span><span data-lang-inline="en">Director</span></div>
-          <div class="contact-value">Muhammadjon O'lmasov</div>
+
+        <h1 class="hero-title">
+          <span data-lang="uz"><em>AL-RIZA</em><strong>MIZAN</strong>Advokatlik Byurosi</span>
+          <span data-lang="ru"><em>AL-RIZA</em><strong>MIZAN</strong>Адвокатское Бюро</span>
+          <span data-lang="en"><em>AL-RIZA</em><strong>MIZAN</strong>Law Office</span>
+        </h1>
+
+        <div class="hero-divider"></div>
+
+        <p class="hero-subtitle">
+          <span data-lang-inline="uz">Huquqiy masalalaringiz uchun ishonchli va professional yechim.</span>
+          <span data-lang-inline="ru">Надёжное и профессиональное решение ваших правовых вопросов.</span>
+          <span data-lang-inline="en">Trusted and professional solutions for your legal matters.</span>
+        </p>
+
+        <p class="hero-desc">
+          <span data-lang-inline="uz">AL-RIZA MIZAN Advokatlik Byurosi jismoniy va yuridik shaxslarga malakali huquqiy
+            yordam ko'rsatadi. Biz mijozlar manfaatlarini himoya qilish, huquqiy maslahat berish va sudlarda vakillik
+            qilish xizmatlarini taklif etamiz.</span>
+          <span data-lang-inline="ru">Адвокатское бюро AL-RIZA MIZAN оказывает квалифицированную юридическую помощь
+            физическим и юридическим лицам. Мы предлагаем услуги по защите интересов клиентов, юридическому
+            консультированию и представительству в судах.</span>
+          <span data-lang-inline="en">AL-RIZA MIZAN Law Office provides qualified legal assistance to individuals and
+            legal entities. We offer services in protecting client interests, legal consulting, and court
+            representation.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            <span>
+              <span data-lang-inline="uz">Bepul maslahat olish</span>
+              <span data-lang-inline="ru">Бесплатная консультация</span>
+              <span data-lang-inline="en">Free Consultation</span>
+            </span>
+          </a>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon-wrap"><i class="fa-solid fa-clock"></i></div>
-        <div>
-          <div class="contact-label"><span data-lang-inline="uz">Ish vaqti</span><span data-lang-inline="ru">Рабочие часы</span><span data-lang-inline="en">Working Hours</span></div>
-          <div class="contact-value">
-            <span data-lang-inline="uz">Dushanba – Juma: 09:00 – 18:00</span>
-            <span data-lang-inline="ru">Понедельник – Пятница: 09:00 – 18:00</span>
-            <span data-lang-inline="en">Monday – Friday: 09:00 – 18:00</span>
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">
+              <span id="stat-founded">2026</span><span data-lang-inline="uz">-yil</span><span data-lang-inline="ru">
+                год</span><span data-lang-inline="en"></span>
+            </div>
+            <div class="hero-stat-label"><span data-lang-inline="uz">Tashkil etilgan</span><span
+                data-lang-inline="ru">Основан</span><span data-lang-inline="en">Founded</span></div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num" id="stat-services">9+</div>
+            <div class="hero-stat-label"><span data-lang-inline="uz">Xizmat turlari</span><span
+                data-lang-inline="ru">Видов услуг</span><span data-lang-inline="en">Service types</span></div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num" id="stat-conf">100%</div>
+            <div class="hero-stat-label"><span data-lang-inline="uz">Maxfiylik</span><span
+                data-lang-inline="ru">Конфиденциальность</span><span data-lang-inline="en">Confidentiality</span></div>
           </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon-wrap"><i class="fa-solid fa-phone-volume"></i></div>
-        <div>
-          <div class="contact-label"><span data-lang-inline="uz">Kontakt</span><span data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></div>
-          <div class="contact-value">
-            <a href="tel:+998906819989" style="color: var(--gold); text-decoration: none; font-size: 1.1rem; font-weight: 600;">+998906819989</a>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="./IMG/Logo.png" alt="⚖️" class="hero-scales"
+            style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1.5rem; border: 3px solid var(--gold); box-shadow: 0 0 30px rgba(212,175,55,0.5);">
+          <div class="hero-card-title">AL-RIZA MIZAN</div>
+          <div class="hero-card-sub">
+            <span data-lang-inline="uz">Advokatlik Byurosi</span>
+            <span data-lang-inline="ru">Адвокатское Бюро</span>
+            <span data-lang-inline="en">Law Office</span>
+          </div>
+          <ul class="hero-card-list">
+            <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Huquqiy
+                maslahat</span><span data-lang-inline="ru">Юридическая консультация</span><span
+                data-lang-inline="en">Legal Consulting</span></li>
+            <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span data-lang-inline="uz">Sudlarda
+                vakillik</span><span data-lang-inline="ru">Представительство в суде</span><span
+                data-lang-inline="en">Court Representation</span></li>
+            <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span
+                data-lang-inline="uz">Shartnomalar tayyorlash</span><span data-lang-inline="ru">Составление
+                договоров</span><span data-lang-inline="en">Contract Drafting</span></li>
+            <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span
+                data-lang-inline="uz">Korxonalar uchun xizmatlar</span><span data-lang-inline="ru">Услуги для
+                компаний</span><span data-lang-inline="en">Corporate Services</span></li>
+            <li><span class="check"><i class="fa-solid fa-circle-check"></i></span> <span
+                data-lang-inline="uz">Iqtisodiy nizolar</span><span data-lang-inline="ru">Экономические
+                споры</span><span data-lang-inline="en">Economic Disputes</span></li>
+          </ul>
+          <div class="hero-card-badge">
+            <span data-lang-inline="uz">Bepul maslahat</span>
+            <span data-lang-inline="ru">Бесплатно</span>
+            <span data-lang-inline="en">Free Consult</span>
           </div>
         </div>
       </div>
-      <div class="contact-item" style="display: block; width: 100%; border-bottom: none;">
-        <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
-          <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <div class="contact-label"><span data-lang-inline="uz">Lokatsiya</span><span data-lang-inline="ru">Локация</span><span data-lang-inline="en">Location</span></div>
-            <div class="contact-value">
-              <span data-lang-inline="uz">Sirdaryo viloyati, Guliston shahri</span>
-              <span data-lang-inline="ru">Сырдарьинская область, город Гулистан</span>
-              <span data-lang-inline="en">Syrdarya region, Gulistan city</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+  <section id="about">
+    <div class="about-grid reveal">
+      <div class="about-visual">
+        <div class="about-img-wrapper">
+          <img src="./IMG/Logo.png" alt="⚖️" class="about-emblem"
+            style="width: 170px; height: 170px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); box-shadow: 0 0 40px rgba(212,175,55,0.4);">
+          <div class="about-year">2026</div>
+          <div class="about-corner"></div>
+          <div class="about-corner-bl"></div>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <div class="section-eyebrow">
+          <span data-lang-inline="uz">Biz haqimizda</span>
+          <span data-lang-inline="ru">О нас</span>
+          <span data-lang-inline="en">About Us</span>
+        </div>
+        <h2 class="section-title" style="text-align:left;">
+          <span data-lang="uz">Ishonchli huquqiy <em>himoyachilar</em></span>
+          <span data-lang="ru">Надёжные правовые <em>защитники</em></span>
+          <span data-lang="en">Trusted Legal <em>Advocates</em></span>
+        </h2>
+        <div class="section-divider" style="margin-left:0;"></div>
+
+        <p class="about-text">
+          <span data-lang="uz">AL-RIZA MIZAN Advokatlik Byurosi 2026-yilda tashkil etilgan bo'lib, fuqarolik, iqtisodiy,
+            ma'muriy va boshqa huquqiy masalalarda professional xizmatlar ko'rsatishga ixtisoslashgan. Bizning bosh
+            maqsadimiz — "Adolat Ruhini Uyg'otish"dir.</span>
+          <span data-lang="ru">Адвокатское бюро AL-RIZA MIZAN основано в 2026 году и специализируется на оказании
+            профессиональных услуг в области гражданского, экономического, административного и других отраслей права.
+            Наша главная цель — «Пробудить Дух Справедливости».</span>
+          <span data-lang-inline="en">AL-RIZA MIZAN Law Office was established in 2026, specializing in providing
+            professional services in civil, economic, administrative and other legal matters. Our ultimate goal is
+            "Awakening the Spirit of Justice".</span>
+        </p>
+
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="about-card-title">
+              <span data-lang-inline="uz">Shiyor</span>
+              <span data-lang-inline="ru">Девиз</span>
+              <span data-lang-inline="en">Motto</span>
+            </div>
+            <div class="about-card-text">
+              <span data-lang-inline="uz">Qonun ustuvorligi va har bir inson huquqlarining ishonchli himoyasi — bizning
+                bosh maqsadimizdir.</span>
+              <span data-lang-inline="ru">Верховенство закона и надёжная защита прав каждого человека — наша главная
+                цель.</span>
+              <span data-lang-inline="en">The rule of law and reliable protection of everyone's rights is our main
+                goal.</span>
+            </div>
+          </div>
+
+          <a href="#credentials" class="about-card"
+            style="text-decoration: none; display: block; border: 1.5px solid rgba(212,175,55,0.4);">
+            <div class="about-card-icon"><i class="fa-solid fa-scroll"></i></div>
+            <div class="about-card-title">
+              <span data-lang-inline="uz">Litsenziya</span>
+              <span data-lang-inline="ru">Лицензия</span>
+              <span data-lang-inline="en">License</span>
+            </div>
+            <div class="about-card-text" style="color: rgba(255,255,255,0.7);">
+              <span data-lang-inline="uz">№ 1348174. Ma'muriy, jinoiy, fuqarolik va iqtisodiy sud ishlarini yuritish
+                (Faol).</span>
+              <span data-lang-inline="ru">№ 1348174. Ведение административных, уголовных, гражданских и экономических
+                дел (Активна).</span>
+              <span data-lang-inline="en">No. 1348174. Conduct of administrative, criminal, civil, and economic court
+                cases (Active).</span>
+            </div>
+            <div class="about-card-arrow">
+              <span data-lang-inline="uz">Batafsil ko'rish</span>
+              <span data-lang-inline="ru">Подробнее</span>
+              <span data-lang-inline="en">View Details</span>
+            </div>
+          </a>
+
+          <a href="#credentials" class="about-card"
+            style="text-decoration: none; display: block; border: 1.5px solid rgba(212,175,55,0.4);">
+            <div class="about-card-icon"><i class="fa-solid fa-file-contract"></i></div>
+            <div class="about-card-title">
+              <span data-lang-inline="uz">Guvohnoma</span>
+              <span data-lang-inline="ru">Свидетельство</span>
+              <span data-lang-inline="en">Certificate</span>
+            </div>
+            <div class="about-card-text" style="color: rgba(255,255,255,0.7);">
+              <span data-lang-inline="uz">Davlat ro'yxatidan o'tgan (Faol). AL-RIZA MIZAN advokatlik byurosi rasmiy
+                davlat reyestrida mavjud.</span>
+              <span data-lang-inline="ru">Государственная регистрация (Активно). Адвокатское бюро AL-RIZA MIZAN внесено
+                в гос. реестр.</span>
+              <span data-lang-inline="en">State registered (Active). AL-RIZA MIZAN law office is registered in the state
+                registry.</span>
+            </div>
+            <div class="about-card-arrow">
+              <span data-lang-inline="uz">Batafsil ko'rish</span>
+              <span data-lang-inline="ru">Подробнее</span>
+              <span data-lang-inline="en">View Details</span>
+            </div>
+          </a>
+
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="about-card-title">
+              <span data-lang-inline="uz">Maqsadimiz</span>
+              <span data-lang-inline="ru">Наша Цель</span>
+              <span data-lang-inline="en">Our Goal</span>
+            </div>
+            <div class="about-card-text">
+              <span data-lang-inline="uz">"Adolat Ruhini Uyg'otish" — bizning har bir ish va himoyadagi bosh
+                maqsadimizdir.</span>
+              <span data-lang-inline="ru">«Пробудить Дух Справедливости» — наша главная цель и закон в каждом
+                деле.</span>
+              <span data-lang-inline="en">"Awakening the Spirit of Justice" — is our primary goal and law in every
+                case.</span>
             </div>
           </div>
         </div>
-        <div class="map-iframe-container" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,0.3); margin-top: 1rem; width: 100%;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.0725287702652!2d68.77947857648316!3d40.513657971424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfa4a4421d11347%3A0x6e634604f8113c2c!2sADVOKATURA%20AL%20RIZA%20MIZAN!5e0!3m2!1sen!2s!4v1717511400000" width="100%" height="340" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SERVICES ═══════════════════════════════════════ -->
+  <section id="services">
+    <div class="section-eyebrow">
+      <span data-lang-inline="uz">Bizning Xizmatlar</span>
+      <span data-lang-inline="ru">Наши Услуги</span>
+      <span data-lang-inline="en">Our Services</span>
+    </div>
+    <h2 class="section-title reveal">
+      <span data-lang="uz">Professional <em>Huquqiy Xizmatlar</em></span>
+      <span data-lang="ru">Профессиональные <em>Юридические Услуги</em></span>
+      <span data-lang-inline="en">Professional <em>Legal Services</em></span>
+    </h2>
+    <div class="section-divider"></div>
+    <p class="section-desc reveal">
+      <span data-lang-inline="uz">Har bir mijozga individual yondashuv bilan sifatli huquqiy xizmat ko'rsatamiz.</span>
+      <span data-lang-inline="ru">Качественные юридические услуги с индивидуальным подходом к каждому клиенту.</span>
+      <span data-lang-inline="en">Quality legal services with an individual approach to each client.</span>
+    </p>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Huquqiy maslahat</span>
+          <span data-lang-inline="ru">Юридическая консультация</span>
+          <span data-lang-inline="en">Legal Consulting</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Har qanday huquqiy masalalar bo'yicha professional maslahat va yo'riqnoma
+            beramiz.</span>
+          <span data-lang-inline="ru">Профессиональные консультации и руководство по любым правовым вопросам.</span>
+          <span data-lang-inline="en">Professional advice and guidance on any legal matters.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 2 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Sudlarda vakillik</span>
+          <span data-lang-inline="ru">Представительство в суде</span>
+          <span data-lang-inline="en">Court Representation</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Barcha turdagi sudlarda sizning manfaatlaringizni professional himoya
+            qilamiz.</span>
+          <span data-lang-inline="ru">Профессиональная защита ваших интересов во всех видах судов.</span>
+          <span data-lang-inline="en">Professional protection of your interests in all types of courts.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 3 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Shartnomalar tayyorlash</span>
+          <span data-lang-inline="ru">Составление договоров</span>
+          <span data-lang-inline="en">Contract Drafting</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Har qanday murakkablikdagi shartnomalarni qonuniy asosda tayyorlab beramiz.</span>
+          <span data-lang-inline="ru">Составление договоров любой сложности на законной основе.</span>
+          <span data-lang-inline="en">Drafting contracts of any complexity on a legal basis.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 4 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Korxonalar uchun xizmatlar</span>
+          <span data-lang-inline="ru">Услуги для предприятий</span>
+          <span data-lang-inline="en">Corporate Legal Services</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Yuridik shaxslar va korxonalarga keng qamrovli huquqiy yordam ko'rsatamiz.</span>
+          <span data-lang-inline="ru">Комплексная юридическая помощь юридическим лицам и предприятиям.</span>
+          <span data-lang-inline="en">Comprehensive legal assistance to legal entities and businesses.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 5 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Fuqarolik ishlari</span>
+          <span data-lang-inline="ru">Гражданские дела</span>
+          <span data-lang-inline="en">Civil Matters</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Oila, meros, mulk va boshqa fuqarolik masalalarida professional yordam.</span>
+          <span data-lang-inline="ru">Профессиональная помощь в семейных, наследственных, имущественных делах.</span>
+          <span data-lang-inline="en">Professional help in family, inheritance, property and other civil matters.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 6 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">06</div>
+        <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Iqtisodiy nizolar</span>
+          <span data-lang-inline="ru">Экономические споры</span>
+          <span data-lang-inline="en">Economic Disputes</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Iqtisodiy sudlarda nizolarni hal qilishda malakali yuridik yordamimiz.</span>
+          <span data-lang-inline="ru">Квалифицированная юридическая помощь в разрешении споров в экономических
+            судах.</span>
+          <span data-lang-inline="en">Qualified legal assistance in resolving disputes in economic courts.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 7 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">07</div>
+        <div class="service-icon"><i class="fa-solid fa-landmark"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Ma'muriy ishlar</span>
+          <span data-lang-inline="ru">Административные дела</span>
+          <span data-lang-inline="en">Administrative Cases</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Davlat organlari bilan munosabatlarda huquqiy himoya va vakillik.</span>
+          <span data-lang-inline="ru">Правовая защита и представительство в отношениях с государственными
+            органами.</span>
+          <span data-lang-inline="en">Legal protection and representation in relations with government bodies.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 8 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">08</div>
+        <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Hujjatlarni ekspertiza</span>
+          <span data-lang-inline="ru">Правовая экспертиза</span>
+          <span data-lang-inline="en">Legal Document Review</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Hujjatlarni huquqiy ekspertizadan o'tkazish va tahlil qilish xizmati.</span>
+          <span data-lang-inline="ru">Услуга правовой экспертизы и анализа документов.</span>
+          <span data-lang-inline="en">Legal examination and analysis of documents service.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+      <!-- Card 9 -->
+      <a href="#contact" class="service-card reveal">
+        <div class="service-num">09</div>
+        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 class="service-title">
+          <span data-lang-inline="uz">Jinoyat ishlarida himoya</span>
+          <span data-lang-inline="ru">Защита по уголовным делам</span>
+          <span data-lang-inline="en">Criminal Defense</span>
+        </h3>
+        <p class="service-desc">
+          <span data-lang-inline="uz">Jinoyat ishlari bo'yicha tergov va sud bosqichlarida ishonchli va professional
+            himoya.</span>
+          <span data-lang-inline="ru">Надёжная и профессиональная защита на стадиях следствия и суда по уголовным
+            делам.</span>
+          <span data-lang-inline="en">Reliable and professional defense during the investigation and trial stages of
+            criminal cases.</span>
+        </p>
+        <div class="service-arrow"><span data-lang-inline="uz">Batafsil</span><span
+            data-lang-inline="ru">Подробнее</span><span data-lang-inline="en">Details</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ ADVANTAGES ═══════════════════════════════════════ -->
+  <section id="advantages">
+    <div class="section-eyebrow">
+      <span data-lang-inline="uz">Nima uchun biz</span>
+      <span data-lang-inline="ru">Почему мы</span>
+      <span data-lang-inline="en">Why Choose Us</span>
+    </div>
+    <h2 class="section-title reveal">
+      <span data-lang="uz">Bizning <em>Afzalliklarimiz</em></span>
+      <span data-lang-inline="ru">Наши <em>Преимущества</em></span>
+      <span data-lang-inline="en">Our <em>Advantages</em></span>
+    </h2>
+    <div class="section-divider"></div>
+
+    <div class="advantages-grid">
+      <div class="adv-card reveal">
+        <span class="adv-icon"><i class="fa-solid fa-bullseye"></i></span>
+        <div class="adv-check"><i class="fa-solid fa-check"></i></div>
+        <div class="adv-title"><span data-lang-inline="uz">Professional yondashuv</span><span
+            data-lang-inline="ru">Профессиональный подход</span><span data-lang-inline="en">Professional Approach</span>
         </div>
-        <div style="margin-top: 0.75rem; text-align: center;">
-          <a href="https://maps.app.goo.gl/hEk3f4fVtB8SubUX8" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.3s;">
-            <span>https://maps.app.goo.gl/hEk3f4fVtB8SubUX8</span>
-            <span>↗</span>
+        <p class="adv-desc"><span data-lang-inline="uz">Har bir ish bo'yicha yuqori darajadagi professional yondashuv va
+            tajriba.</span><span data-lang-inline="ru">Высокий профессиональный подход и опыт по каждому
+            делу.</span><span data-lang-inline="en">High-level professional approach and expertise on every case.</span>
+        </p>
+      </div>
+      <div class="adv-card reveal">
+        <span class="adv-icon"><i class="fa-solid fa-lock"></i></span>
+        <div class="adv-check"><i class="fa-solid fa-check"></i></div>
+        <div class="adv-title"><span data-lang-inline="uz">Maxfiylik kafolati</span><span data-lang-inline="ru">Гарантия
+            конфиденциальности</span><span data-lang-inline="en">Confidentiality Guarantee</span></div>
+        <p class="adv-desc"><span data-lang-inline="uz">Mijoz ma'lumotlari to'liq maxfiy saqlanadi va uchinchi
+            shaxslarga berilmaydi.</span><span data-lang-inline="ru">Данные клиентов полностью конфиденциальны и не
+            передаются третьим лицам.</span><span data-lang-inline="en">Client data is fully confidential and not shared
+            with third parties.</span></p>
+      </div>
+      <div class="adv-card reveal">
+        <span class="adv-icon"><i class="fa-solid fa-bolt"></i></span>
+        <div class="adv-check"><i class="fa-solid fa-check"></i></div>
+        <div class="adv-title"><span data-lang-inline="uz">Tezkor xizmat</span><span data-lang-inline="ru">Оперативное
+            обслуживание</span><span data-lang-inline="en">Fast Service</span></div>
+        <p class="adv-desc"><span data-lang-inline="uz">Murojaat qilingan paytdan boshlab tez va samarali huquqiy yordam
+            ko'rsatamiz.</span><span data-lang-inline="ru">Быстрая и эффективная юридическая помощь с момента
+            обращения.</span><span data-lang-inline="en">Fast and effective legal assistance from the moment of
+            application.</span></p>
+      </div>
+      <div class="adv-card reveal">
+        <span class="adv-icon"><i class="fa-solid fa-user-tie"></i></span>
+        <div class="adv-check"><i class="fa-solid fa-check"></i></div>
+        <div class="adv-title"><span data-lang-inline="uz">Individual yechimlar</span><span
+            data-lang-inline="ru">Индивидуальные решения</span><span data-lang-inline="en">Individual Solutions</span>
+        </div>
+        <p class="adv-desc"><span data-lang-inline="uz">Har bir mijozga alohida yondashuv va individual yechimlar taqdim
+            etamiz.</span><span data-lang-inline="ru">Индивидуальный подход и решения для каждого клиента.</span><span
+            data-lang-inline="en">Individual approach and solutions for every client.</span></p>
+      </div>
+      <div class="adv-card reveal">
+        <span class="adv-icon"><i class="fa-solid fa-shield-halved"></i></span>
+        <div class="adv-check"><i class="fa-solid fa-check"></i></div>
+        <div class="adv-title"><span data-lang-inline="uz">Ishonchli himoya</span><span data-lang-inline="ru">Надёжная
+            защита</span><span data-lang-inline="en">Reliable Protection</span></div>
+        <p class="adv-desc"><span data-lang-inline="uz">Sizning huquqlaringiz va manfaatlaringizni to'liq va ishonchli
+            himoya qilamiz.</span><span data-lang-inline="ru">Полная и надёжная защита ваших прав и
+            интересов.</span><span data-lang-inline="en">Full and reliable protection of your rights and
+            interests.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-eyebrow">
+      <span data-lang-inline="uz">Aloqa</span>
+      <span data-lang-inline="ru">Контакты</span>
+      <span data-lang-inline="en">Contact</span>
+    </div>
+    <h2 class="section-title reveal">
+      <span data-lang="uz">Biz bilan <em>Bog'laning</em></span>
+      <span data-lang-inline="ru">Свяжитесь <em>с нами</em></span>
+      <span data-lang-inline="en">Get in <em>Touch</em></span>
+    </h2>
+    <div class="section-divider"></div>
+    <p class="section-desc reveal">
+      <span data-lang-inline="uz">Birinchi maslahat bepul. Bugun murojaat qiling.</span>
+      <span data-lang-inline="ru">Первая консультация бесплатно. Обратитесь сегодня.</span>
+      <span data-lang-inline="en">First consultation is free. Contact us today.</span>
+    </p>
+
+    <div class="contact-centered-wrapper reveal">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
+          <div>
+            <div class="contact-label"><span data-lang-inline="uz">Kompaniya</span><span
+                data-lang-inline="ru">Компания</span><span data-lang-inline="en">Company</span></div>
+            <div class="contact-value">AL-RIZA MIZAN Advokatlik Byurosi<br><small>STIR: 312881361</small></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap"><i class="fa-solid fa-gavel"></i></div>
+          <div>
+            <div class="contact-label"><span data-lang-inline="uz">Direktor</span><span
+                data-lang-inline="ru">Директор</span><span data-lang-inline="en">Director</span></div>
+            <div class="contact-value">Muhammadjon O'lmasov</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="contact-label"><span data-lang-inline="uz">Ish vaqti</span><span data-lang-inline="ru">Рабочие
+                часы</span><span data-lang-inline="en">Working Hours</span></div>
+            <div class="contact-value">
+              <span data-lang-inline="uz">Dushanba – Juma: 09:00 – 18:00</span>
+              <span data-lang-inline="ru">Понедельник – Пятница: 09:00 – 18:00</span>
+              <span data-lang-inline="en">Monday – Friday: 09:00 – 18:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <div class="contact-label"><span data-lang-inline="uz">Kontakt</span><span
+                data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></div>
+            <div class="contact-value">
+              <a href="tel:+998906819989"
+                style="color: var(--gold); text-decoration: none; font-size: 1.1rem; font-weight: 600;">+998906819989</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item" style="display: block; width: 100%; border-bottom: none;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+            <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-label"><span data-lang-inline="uz">Lokatsiya</span><span
+                  data-lang-inline="ru">Локация</span><span data-lang-inline="en">Location</span></div>
+              <div class="contact-value">
+                <span data-lang-inline="uz">Sirdaryo viloyati, Guliston shahri</span>
+                <span data-lang-inline="ru">Сырдарьинская область, город Гулистан</span>
+                <span data-lang-inline="en">Syrdarya region, Gulistan city</span>
+              </div>
+            </div>
+          </div>
+          <div class="map-iframe-container"
+            style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,0.3); margin-top: 1rem; width: 100%;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.0725287702652!2d68.77947857648316!3d40.513657971424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfa4a4421d11347%3A0x6e634604f8113c2c!2sADVOKATURA%20AL%20RIZA%20MIZAN!5e0!3m2!1sen!2s!4v1717511400000"
+              width="100%" height="340" style="border:0; display: block;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div style="margin-top: 0.75rem; text-align: center;">
+            <a href="https://maps.app.goo.gl/hEk3f4fVtB8SubUX8" target="_blank" rel="noopener noreferrer"
+              style="color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.3s;">
+              <span>https://maps.app.goo.gl/hEk3f4fVtB8SubUX8</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ HUJJATLAR (CREDENTIALS) ═══════════════════════════════════════ -->
+  <section id="credentials" class="section-dark"
+    style="background: var(--navy-dark); border-top: 1px solid rgba(212,175,55,0.1);">
+    <div class="section-eyebrow">
+      <span data-lang-inline="uz">Hujjatlar</span>
+      <span data-lang-inline="ru">Документы</span>
+      <span data-lang-inline="en">Documents</span>
+    </div>
+    <h2 class="section-title reveal">
+      <span data-lang-inline="uz">Rasmiy <em>Hujjatlar</em></span>
+      <span data-lang-inline="ru">Официальные <em>Документы</em></span>
+      <span data-lang-inline="en">Official <em>Documents</em></span>
+    </h2>
+    <div class="section-divider"></div>
+    <p class="section-desc reveal">
+      <span data-lang-inline="uz">AL-RIZA MIZAN Advokatlik Byurosi rasmiy litsenziyasi va davlat ro'yxatidan o'tganligi
+        to'g'risidagi guvohnomalari.</span>
+      <span data-lang-inline="ru">Официальная лицензия и свидетельство о государственной регистрации адвокатского бюро
+        AL-RIZA MIZAN.</span>
+      <span data-lang-inline="en">Official license and state registration certificates of AL-RIZA MIZAN advocacy
+        bureau.</span>
+    </p>
+
+    <div class="credentials-grid reveal">
+      <!-- License Card -->
+      <div class="credential-card">
+        <h3 class="credential-card-title">
+          <span data-lang-inline="uz">Rasmiy Litsenziya</span>
+          <span data-lang-inline="ru">Официальная Лицензия</span>
+          <span data-lang-inline="en">Official License</span>
+        </h3>
+        <p class="credential-card-desc">
+          <span data-lang-inline="uz">Advokatlik faoliyati bilan shug'ullanish huquqini beruvchi litsenziya №
+            1348174.</span>
+          <span data-lang-inline="ru">Лицензия на право занятия адвокатской деятельностью № 1348174.</span>
+          <span data-lang-inline="en">License to practice advocacy No. 1348174.</span>
+        </p>
+
+        <div class="credential-card-img-wrap">
+          <a href="javascript:void(0)" class="credential-modal-trigger" style="display: block;">
+            <img src="./IMG/Litsenziya.png" alt="AL RIZA MIZAN Litsenziya" referrerPolicy="no-referrer">
           </a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════ HUJJATLAR (CREDENTIALS) ═══════════════════════════════════════ -->
-<section id="credentials" class="section-dark" style="background: var(--navy-dark); border-top: 1px solid rgba(212,175,55,0.1);">
-  <div class="section-eyebrow">
-    <span data-lang-inline="uz">Hujjatlar</span>
-    <span data-lang-inline="ru">Документы</span>
-    <span data-lang-inline="en">Documents</span>
-  </div>
-  <h2 class="section-title reveal">
-    <span data-lang-inline="uz">Rasmiy <em>Hujjatlar</em></span>
-    <span data-lang-inline="ru">Официальные <em>Документы</em></span>
-    <span data-lang-inline="en">Official <em>Documents</em></span>
-  </h2>
-  <div class="section-divider"></div>
-  <p class="section-desc reveal">
-    <span data-lang-inline="uz">AL-RIZA MIZAN Advokatlik Byurosi rasmiy litsenziyasi va davlat ro'yxatidan o'tganligi to'g'risidagi guvohnomalari.</span>
-    <span data-lang-inline="ru">Официальная лицензия и свидетельство о государственной регистрации адвокатского бюро AL-RIZA MIZAN.</span>
-    <span data-lang-inline="en">Official license and state registration certificates of AL-RIZA MIZAN advocacy bureau.</span>
-  </p>
-
-  <div class="credentials-grid reveal">
-    <!-- License Card -->
-    <div class="credential-card">
-      <h3 class="credential-card-title">
-        <span data-lang-inline="uz">Rasmiy Litsenziya</span>
-        <span data-lang-inline="ru">Официальная Лицензия</span>
-        <span data-lang-inline="en">Official License</span>
-      </h3>
-      <p class="credential-card-desc">
-        <span data-lang-inline="uz">Advokatlik faoliyati bilan shug'ullanish huquqini beruvchi litsenziya № 1348174.</span>
-        <span data-lang-inline="ru">Лицензия на право занятия адвокатской деятельностью № 1348174.</span>
-        <span data-lang-inline="en">License to practice advocacy No. 1348174.</span>
-      </p>
-      
-      <div class="credential-card-img-wrap">
-        <a href="javascript:void(0)" class="credential-modal-trigger" style="display: block;">
-          <img src="./IMG/Litsenziya.png" alt="AL RIZA MIZAN Litsenziya" referrerPolicy="no-referrer">
-        </a>
-      </div>
-      
-      <div class="credential-card-action">
-        <span data-lang-inline="uz">Batafsil ko'rish</span>
-        <span data-lang-inline="ru">Подробнее</span>
-        <span data-lang-inline="en">View Details</span>
-      </div>
-    </div>
-
-    <!-- Certificate Card -->
-    <div class="credential-card">
-      <h3 class="credential-card-title">
-        <span data-lang-inline="uz">Guvohnoma</span>
-        <span data-lang-inline="ru">Свидетельство</span>
-        <span data-lang-inline="en">Certificate</span>
-      </h3>
-      <p class="credential-card-desc">
-        <span data-lang-inline="uz">Davlat ro'yxatidan o'tgan (Faol). Advokatlik byurosi litsenziyalangan guvohnomasi.</span>
-        <span data-lang-inline="ru">Государственная регистрация (Активно). Свидетельство о регистрации адвокатского бюро.</span>
-        <span data-lang-inline="en">State registration (Active). Certificate of registration of the advocacy bureau.</span>
-      </p>
-      
-      <div class="credential-card-img-wrap">
-        <a href="javascript:void(0)" class="credential-modal-trigger" style="display: block;">
-          <img src="./IMG/Guvohnoma.png" onerror="this.src='./IMG/Litsenziya.png'; this.style.filter='hue-rotate(45deg)';" alt="AL RIZA MIZAN Guvohnoma" referrerPolicy="no-referrer">
-        </a>
-      </div>
-      
-      <div class="credential-card-action">
-        <span data-lang-inline="uz">Batafsil ko'rish</span>
-        <span data-lang-inline="ru">Подробнее</span>
-        <span data-lang-inline="en">View Details</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="nav-logo">
-        <div class="nav-logo-emblem"><img src="./IMG/Logo.png" alt="⚖" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
-        <div class="nav-logo-text">
-          <span class="brand">AL-RIZA MIZAN</span>
-          <span class="tagline">Advokatlik Byurosi</span>
+        <div class="credential-card-action">
+          <span data-lang-inline="uz">Batafsil ko'rish</span>
+          <span data-lang-inline="ru">Подробнее</span>
+          <span data-lang-inline="en">View Details</span>
         </div>
       </div>
-      <p class="footer-desc">
-        <span data-lang-inline="uz">Guliston, Sirdaryo viloyati, O'zbekistonda huquqiy xizmatlar ko'rsatuvchi ishonchli advokatlik byurosi.</span>
-        <span data-lang-inline="ru">Надёжное адвокатское бюро, оказывающее юридические услуги в Гулистане, Сырдарьинской области, Узбекистан.</span>
-        <span data-lang-inline="en">A trusted law office providing legal services in Guliston, Syrdarya region, Uzbekistan.</span>
-      </p>
+
+      <!-- Certificate Card -->
+      <div class="credential-card">
+        <h3 class="credential-card-title">
+          <span data-lang-inline="uz">Guvohnoma</span>
+          <span data-lang-inline="ru">Свидетельство</span>
+          <span data-lang-inline="en">Certificate</span>
+        </h3>
+        <p class="credential-card-desc">
+          <span data-lang-inline="uz">Davlat ro'yxatidan o'tgan (Faol). Advokatlik byurosi litsenziyalangan
+            guvohnomasi.</span>
+          <span data-lang-inline="ru">Государственная регистрация (Активно). Свидетельство о регистрации адвокатского
+            бюро.</span>
+          <span data-lang-inline="en">State registration (Active). Certificate of registration of the advocacy
+            bureau.</span>
+        </p>
+
+        <div class="credential-card-img-wrap">
+          <a href="javascript:void(0)" class="credential-modal-trigger" style="display: block;">
+            <img src="./IMG/Guvohnoma.png"
+              onerror="this.src='./IMG/Litsenziya.png'; this.style.filter='hue-rotate(45deg)';"
+              alt="AL RIZA MIZAN Guvohnoma" referrerPolicy="no-referrer">
+          </a>
+        </div>
+
+        <div class="credential-card-action">
+          <span data-lang-inline="uz">Batafsil ko'rish</span>
+          <span data-lang-inline="ru">Подробнее</span>
+          <span data-lang-inline="en">View Details</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-emblem"><img src="./IMG/Logo.png" alt="⚖"
+              style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+          <div class="nav-logo-text">
+            <span class="brand">AL-RIZA MIZAN</span>
+            <span class="tagline">Advokatlik Byurosi</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          <span data-lang-inline="uz">Guliston, Sirdaryo viloyati, O'zbekistonda huquqiy xizmatlar ko'rsatuvchi
+            ishonchli advokatlik byurosi.</span>
+          <span data-lang-inline="ru">Надёжное адвокатское бюро, оказывающее юридические услуги в Гулистане,
+            Сырдарьинской области, Узбекистан.</span>
+          <span data-lang-inline="en">A trusted law office providing legal services in Guliston, Syrdarya region,
+            Uzbekistan.</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4><span data-lang-inline="uz">Xizmatlar</span><span data-lang-inline="ru">Услуги</span><span
+            data-lang-inline="en">Services</span></h4>
+        <ul>
+          <li><a href="#services"><span data-lang-inline="uz">Huquqiy maslahat</span><span
+                data-lang-inline="ru">Юридическая консультация</span><span data-lang-inline="en">Legal
+                Consulting</span></a></li>
+          <li><a href="#services"><span data-lang-inline="uz">Sudlarda vakillik</span><span
+                data-lang-inline="ru">Представительство в суде</span><span data-lang-inline="en">Court
+                Representation</span></a></li>
+          <li><a href="#services"><span data-lang-inline="uz">Shartnomalar</span><span
+                data-lang-inline="ru">Договоры</span><span data-lang-inline="en">Contracts</span></a></li>
+          <li><a href="#services"><span data-lang-inline="uz">Fuqarolik ishlari</span><span
+                data-lang-inline="ru">Гражданские дела</span><span data-lang-inline="en">Civil Matters</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span data-lang-inline="uz">Sahifalar</span><span data-lang-inline="ru">Страницы</span><span
+            data-lang-inline="en">Pages</span></h4>
+        <ul>
+          <li><a href="#home"><span data-lang-inline="uz">Bosh sahifa</span><span
+                data-lang-inline="ru">Главная</span><span data-lang-inline="en">Home</span></a></li>
+          <li><a href="#about"><span data-lang-inline="uz">Biz haqimizda</span><span data-lang-inline="ru">О
+                нас</span><span data-lang-inline="en">About</span></a></li>
+          <li><a href="#advantages"><span data-lang-inline="uz">Afzalliklar</span><span
+                data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Advantages</span></a></li>
+          <li><a href="#contact"><span data-lang-inline="uz">Aloqa</span><span
+                data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></a></li>
+        </ul>
+      </div>
+
+
     </div>
 
-    <div class="footer-col">
-      <h4><span data-lang-inline="uz">Xizmatlar</span><span data-lang-inline="ru">Услуги</span><span data-lang-inline="en">Services</span></h4>
-      <ul>
-        <li><a href="#services"><span data-lang-inline="uz">Huquqiy maslahat</span><span data-lang-inline="ru">Юридическая консультация</span><span data-lang-inline="en">Legal Consulting</span></a></li>
-        <li><a href="#services"><span data-lang-inline="uz">Sudlarda vakillik</span><span data-lang-inline="ru">Представительство в суде</span><span data-lang-inline="en">Court Representation</span></a></li>
-        <li><a href="#services"><span data-lang-inline="uz">Shartnomalar</span><span data-lang-inline="ru">Договоры</span><span data-lang-inline="en">Contracts</span></a></li>
-        <li><a href="#services"><span data-lang-inline="uz">Fuqarolik ishlari</span><span data-lang-inline="ru">Гражданские дела</span><span data-lang-inline="en">Civil Matters</span></a></li>
-      </ul>
+    <div class="footer-bottom">
+      <div>© 2026 <span>AL-RIZA MIZAN</span> Advokatlik Byurosi.
+        <span data-lang-inline="uz">Barcha huquqlar himoyalangan.</span>
+        <span data-lang-inline="ru">Все права защищены.</span>
+        <span data-lang-inline="en">All rights reserved.</span>
+      </div>
+      <div class="footer-stir">STIR: 312881361 · Guliston, Sirdaryo viloyati, O'zbekiston</div>
     </div>
+  </footer>
 
-    <div class="footer-col">
-      <h4><span data-lang-inline="uz">Sahifalar</span><span data-lang-inline="ru">Страницы</span><span data-lang-inline="en">Pages</span></h4>
-      <ul>
-        <li><a href="#home"><span data-lang-inline="uz">Bosh sahifa</span><span data-lang-inline="ru">Главная</span><span data-lang-inline="en">Home</span></a></li>
-        <li><a href="#about"><span data-lang-inline="uz">Biz haqimizda</span><span data-lang-inline="ru">О нас</span><span data-lang-inline="en">About</span></a></li>
-        <li><a href="#advantages"><span data-lang-inline="uz">Afzalliklar</span><span data-lang-inline="ru">Преимущества</span><span data-lang-inline="en">Advantages</span></a></li>
-        <li><a href="#contact"><span data-lang-inline="uz">Aloqa</span><span data-lang-inline="ru">Контакты</span><span data-lang-inline="en">Contact</span></a></li>
-      </ul>
+  <!-- ═══════════════════════════════════════ LICENSE LIGHTBOX MODAL ═══════════════════════════════════════ -->
+  <div id="license-modal" class="license-modal">
+    <button id="license-modal-close" class="modal-back-btn">
+      ← <span data-lang-inline="uz">Ortga</span><span data-lang-inline="ru">Назад</span><span
+        data-lang-inline="en">Back</span>
+    </button>
+    <div class="modal-content-wrapper">
+      <img src="./IMG/Litsenziya.png" alt="AL RIZA MIZAN Litsenziya" id="modal-image" class="modal-img"
+        draggable="false">
     </div>
-
-
-  </div>
-
-  <div class="footer-bottom">
-    <div>© 2026 <span>AL-RIZA MIZAN</span> Advokatlik Byurosi. 
-      <span data-lang-inline="uz">Barcha huquqlar himoyalangan.</span>
-      <span data-lang-inline="ru">Все права защищены.</span>
-      <span data-lang-inline="en">All rights reserved.</span>
+    <div class="modal-controls">
+      <button id="zoom-out-btn" class="modal-ctrl-btn" title="Zoom Out">−</button>
+      <button id="zoom-reset-btn" class="modal-ctrl-btn" title="Reset Zoom">↺</button>
+      <button id="zoom-in-btn" class="modal-ctrl-btn" title="Zoom In">+</button>
     </div>
-    <div class="footer-stir">STIR: 312881361 · Guliston, Sirdaryo viloyati, O'zbekiston</div>
   </div>
-</footer>
 
-<!-- ═══════════════════════════════════════ LICENSE LIGHTBOX MODAL ═══════════════════════════════════════ -->
-<div id="license-modal" class="license-modal">
-  <button id="license-modal-close" class="modal-back-btn">
-    ← <span data-lang-inline="uz">Ortga</span><span data-lang-inline="ru">Назад</span><span data-lang-inline="en">Back</span>
-  </button>
-  <div class="modal-content-wrapper">
-    <img src="./IMG/Litsenziya.png" alt="AL RIZA MIZAN Litsenziya" id="modal-image" class="modal-img" draggable="false">
-  </div>
-  <div class="modal-controls">
-    <button id="zoom-out-btn" class="modal-ctrl-btn" title="Zoom Out">−</button>
-    <button id="zoom-reset-btn" class="modal-ctrl-btn" title="Reset Zoom">↺</button>
-    <button id="zoom-in-btn" class="modal-ctrl-btn" title="Zoom In">+</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
