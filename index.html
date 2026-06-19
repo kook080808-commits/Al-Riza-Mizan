@@ -587,6 +587,74 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════ BEPUL MASLAHAT (AI CONSULTATION) ═══════════════════════════════ -->
+  <section id="ai-consultation" class="section-dark" style="background: var(--navy-dark); border-top: 1px solid rgba(212,175,55,0.1); padding: 5rem 0;">
+    <div class="section-eyebrow">
+      <span data-lang-inline="uz">AI Maslahat</span>
+      <span data-lang-inline="ru">AI Консультация</span>
+      <span data-lang-inline="en">AI Consultation</span>
+    </div>
+    <h2 class="section-title reveal">
+      <span data-lang-inline="uz">Bepul <em>AI Advokat</em> Maslahati</span>
+      <span data-lang-inline="ru">Бесплатная <em>AI Консультация</em></span>
+      <span data-lang-inline="en">Free <em>AI Legal Consultation</em></span>
+    </h2>
+    <div class="section-divider"></div>
+    <p class="section-desc reveal">
+      <span data-lang-inline="uz">Huquqiy masalangizni yozing va sun'iy intellekt advokatimizdan lahzada bepul maslahat oling.</span>
+      <span data-lang-inline="ru">Опишите свой юридический вопрос и получите мгновенную бесплатную консультацию от нашего ИИ-адвоката.</span>
+      <span data-lang-inline="en">Describe your legal issue and receive an instant free consultation from our AI advocate.</span>
+    </p>
+
+    <div class="contact-centered-wrapper reveal" style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: center; width: 100%;">
+      <div class="contact-form" style="width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 2.5rem 2rem;">
+        <div class="form-title" style="margin-bottom: 1.5rem; text-align: center;">
+          <span data-lang-inline="uz">Savolingizni ushbu oynaga yo'llang</span>
+          <span data-lang-inline="ru">Отправьте ваш вопрос в это окно</span>
+          <span data-lang-inline="en">Submit your question in this window</span>
+        </div>
+        
+        <div id="ai-form">
+          <div class="form-group full" style="margin-bottom: 1.5rem;">
+            <textarea id="ai-question" placeholder="Sizni qaysi huquqiy masala qiziqtirmoqda? Masalan: sud ishlari, meros, oilaviy nizolar, shartnomalar yoki boshqa turlar..." required style="width: 100%; min-height: 140px; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; color: #ffffff; padding: 1.25rem; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.5; resize: vertical; outline: none; transition: border-color 0.3s; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);" onfocus="this.style.borderColor='var(--gold)';" onblur="this.style.borderColor='rgba(212,175,55,0.3)';"></textarea>
+          </div>
+          <button type="button" id="ai-submit-btn" class="form-submit" style="width: 100%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+            <i class="fa-solid fa-brain" id="ai-brain-icon"></i>
+            <span data-lang-inline="uz">Advokat Maslahatini Olish</span>
+            <span data-lang-inline="ru">Получить Консультацию Адвоката</span>
+            <span data-lang-inline="en">Get Advocate's Advice</span>
+          </button>
+        </div>
+
+        <!-- Consultation Result Container -->
+        <div id="ai-response-container" style="display: none; margin-top: 2rem; padding: 2rem; background: rgba(212,175,55,0.04); border: 1px solid rgba(212,175,55,0.35); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+          <h4 style="color: var(--gold); margin-bottom: 1.25rem; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 0.75rem;">
+            <i class="fa-solid fa-scale-balanced" style="font-size: 1.2rem;"></i>
+            <span data-lang-inline="uz">AL-RIZA MIZAN AI Advokati</span>
+            <span data-lang-inline="ru">ИИ-Адвокат AL-RIZA MIZAN</span>
+            <span data-lang-inline="en">AL-RIZA MIZAN AI Advocate</span>
+          </h4>
+          
+          <div id="ai-response-text" style="color: #e2e8f0; font-size: 1rem; line-height: 1.7; white-space: pre-wrap; font-family: 'Montserrat', sans-serif; max-height: 400px; overflow-y: auto; padding-right: 0.5rem;"></div>
+          
+          <div style="margin-top: 1.75rem; border-top: 1px solid rgba(212,175,55,0.15); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p style="color: var(--gray); font-style: italic; font-size: 0.75rem; margin: 0; max-width: 65%; line-height: 1.4;">
+              <span data-lang-inline="uz">*Eslatma: Sun'iy intellekt advokatining maslahati dastlabki ma'lumot hisoblanadi. Aniqroq tahlil va sud himoyasi uchun bizning idoramizga murojaat qilishni maslahat beramiz.</span>
+              <span data-lang-inline="ru">*Примечание: Консультация ИИ носит предварительный характер. Для детального анализа и судебной защиты рекомендуем обратиться в наше бюро.</span>
+              <span data-lang-inline="en">*Note: AI consultation is informational. For detailed analysis and court defense, we recommend contacting our executive office directly.</span>
+            </p>
+            <button type="button" id="ai-ask-new-btn" class="btn-outline" style="padding: 10px 20px; font-size: 0.8rem; border-radius: 6px; cursor: pointer; background: transparent; transition: all 0.3s;">
+              <span data-lang-inline="uz">Yangi Savol</span>
+              <span data-lang-inline="ru">Новый Вопрос</span>
+              <span data-lang-inline="en">New Question</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
   <section id="contact">
     <div class="section-eyebrow">
