@@ -1252,3 +1252,87 @@ a.about-card:hover {
   }
 }
 
+/* ─── AI CHAT COMPONENT STYLES ─── */
+#ai-chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+#ai-chat-messages::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+#ai-chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+#ai-chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 0.85rem 1.15rem;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  animation: slideBubble 0.25s ease-out forwards;
+}
+
+.chat-bubble.bot {
+  background: rgba(212, 175, 55, 0.05);
+  align-self: flex-start;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #f1f5f9;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-bubble.bot strong {
+  color: var(--gold);
+}
+
+.chat-bubble.user {
+  background: var(--gold);
+  align-self: flex-end;
+  color: var(--navy-dark);
+  font-weight: 500;
+  border-bottom-right-radius: 2px;
+}
+
+@keyframes slideBubble {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  } 40% { 
+    transform: scale(1.0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
