@@ -1,7 +1,7 @@
 // ── GEMINI CONFIGURATION ──
 // O'zingizning shaxsiy Gemini API kalitingizni shu yerga kiriting:
 // Enter your personal Gemini API key here:
-const GEMINI_API_KEY = "AQ.Ab8RN6L0FKOd-75OWf6ZjrPGrwn9RqaX28EeIERoKHM4vrAnKg";
+const GEMINI_API_KEY = "AQ.Ab8RN6KLEchD-cAtJS1ksVClvOTieXCcMIJGefBe09oUciZ0ww";
 
 // ── LOADER ──
 window.addEventListener('load', () => {
@@ -129,6 +129,9 @@ window.setLang = function(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.textContent.toLowerCase() === lang);
   });
+  if (typeof updateChatDisplay === 'function') {
+    updateChatDisplay();
+  }
 };
 
 function updateLangDisplay(lang) {
@@ -394,122 +397,306 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── AI CONSULTATION (BEPUL MASLAHAT) INTEGRATION ──
   const aiSubmitBtn = document.getElementById('ai-submit-btn');
-  const aiAskNewBtn = document.getElementById('ai-ask-new-btn');
+  const aiClearBtn = document.getElementById('ai-clear-btn');
   const aiQuestionText = document.getElementById('ai-question');
   const aiResponseContainer = document.getElementById('ai-response-container');
   const aiResponseText = document.getElementById('ai-response-text');
   const aiFormBlock = document.getElementById('ai-form');
   const aiBrainIcon = document.getElementById('ai-brain-icon');
 
-  if (aiSubmitBtn && aiQuestionText && aiResponseContainer && aiResponseText && aiFormBlock) {
-    aiSubmitBtn.addEventListener('click', async () => {
-      const question = aiQuestionText.value.trim();
-      if (!question) {
-        const isUz = !document.body.className.includes('lang-ru') && !document.body.className.includes('lang-en');
-        const isRu = document.body.className.includes('lang-ru');
-        alert(isUz ? 'Iltimos, savolingizni yozing.' : (isRu ? 'Пожалуйста, введите ваш вопрос.' : 'Please enter your question.'));
-        return;
-      }
+  // Multi-turn conversation state
+  let conversationHistory = [];
 
-      // Determine current application language
-      let lang = 'uz';
-      if (document.body.className.includes('lang-ru')) {
-        lang = 'ru';
-      } else if (document.body.className.includes('lang-en')) {
-        lang = 'en';
-      }
+  // Helper to escape HTML characters
+  function escapeHTML(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 
-      // Button Loading State
-      const originalBtnHtml = aiSubmitBtn.innerHTML;
-      aiSubmitBtn.disabled = true;
-      if (aiBrainIcon) aiBrainIcon.className = 'fa-solid fa-spinner fa-spin';
-      
-      if (lang === 'uz') {
-        aiSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Tahlil qilinmoqda...';
-      } else if (lang === 'ru') {
-        aiSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Анализ вопроса...';
+  // Markdown rendering engine for code blocks, lists, bold/italics
+  function renderMarkdown(text) {
+    if (!text) return '';
+    let html = text;
+
+    // Code blocks: ```javascript ... ```
+    html = html.replace(/```(\w*)\n([\s\S]*?)\n```/g, (match, lang, code) => {
+      const codeEscaped = escapeHTML(code.trim());
+      return `<div class="code-block-wrapper" style="margin: 1rem 0; border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; overflow: hidden; background: #0c0f1d; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.35);">
+        <div style="background: rgba(212,175,55,0.1); padding: 0.4rem 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--gold); font-weight: 600;">
+          <span>${lang ? lang.toUpperCase() : 'CODE'}</span>
+          <button type="button" class="copy-code-btn" style="background: transparent; border: none; color: var(--gold); cursor: pointer; display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s; font-weight: 600;" onmouseenter="this.style.color='#ffffff';" onmouseleave="this.style.color='var(--gold)';" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent.trim()); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fa-regular fa-copy\'></i> Copy', 2000);">
+            <i class="fa-regular fa-copy"></i> Copy
+          </button>
+        </div>
+        <pre style="margin: 0; padding: 1rem; overflow-x: auto; color: #e2e8f0; line-height: 1.5; white-space: pre;"><code>${codeEscaped}</code></pre>
+      </div>`;
+    });
+
+    // Inline code: `code`
+    html = html.replace(/`([^`\n]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.15rem 0.35rem; border-radius: 4px; font-family: \'JetBrains Mono\', monospace; font-size: 0.9rem; color: #f6ad55; border: 1px solid rgba(255,255,255,0.05); font-weight: 500;">$1</code>');
+
+    // Bold: **text**
+    html = html.replace(/\*\*([\s\S]*?)\*\*/g, '<strong style="color: var(--gold); font-weight: 700;">$1</strong>');
+
+    // Italic: *text*
+    html = html.replace(/\*([\s\S]*?)\*/g, '<em style="font-style: italic; color: #f7fafc;">$1</em>');
+
+    // Bulleted lists: * item or - item
+    html = html.replace(/^\s*[-*]\s+(.+)$/gm, '<li style="margin-left: 1.25rem; list-style-type: disc; margin-bottom: 0.4rem; color: #cbd5e1;">$1</li>');
+    html = html.replace(/(<li style="[^"]*disc"[\s\S]*?<\/li>)/g, '<ul style="margin: 0.75rem 0; padding-left: 0.5rem; list-style-position: inside;">$1</ul>');
+    html = html.replace(/<\/ul>\s*<ul[^>]*>/g, '');
+
+    // Numbered lists: 1. item
+    html = html.replace(/^\s*\d+\.\s+(.+)$/gm, '<li style="margin-left: 1.25rem; list-style-type: decimal; margin-bottom: 0.4rem; color: #cbd5e1;">$1</li>');
+    html = html.replace(/(<li style="[^"]*decimal"[\s\S]*?<\/li>)/g, '<ol style="margin: 0.75rem 0; padding-left: 0.5rem; list-style-position: inside;">$1</ol>');
+    html = html.replace(/<\/ol>\s*<ol[^>]*>/g, '');
+
+    // Newlines to br
+    html = html.replace(/\n/g, '<br>');
+
+    return html;
+  }
+
+  // Updates the chat display by rendering the entire sequence of conversation history
+  function updateChatDisplay() {
+    if (!aiResponseText) return;
+    
+    let isUz = !document.body.className.includes('lang-ru') && !document.body.className.includes('lang-en');
+    let isRu = document.body.className.includes('lang-ru');
+    
+    let chatHtml = '';
+
+    // Add initial greeting message
+    chatHtml += `
+      <div class="chat-message ai-msg" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; animation: fadeIn 0.3s ease;">
+        <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="fa-solid fa-scale-balanced"></i> ${isUz ? 'AL-RIZA MIZAN AI Advokati' : (isRu ? 'ИИ-Адвокат AL-RIZA MIZAN' : 'AL-RIZA MIZAN AI Advocate')}
+        </div>
+        <div style="background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.22); border-radius: 12px 12px 12px 0; padding: 0.9rem 1.25rem; max-width: 85%; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; word-break: break-word; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+          ${isUz ? 'Assalomu alaykum! Men "AL-RIZA MIZAN" advokatlik byurosi sun\'iy intellekt yordamchisiman. Sizni qanday huquqiy savol qiziqtirmoqda? Savolingizni quyidagi maydonga yozing.' : (isRu ? 'Здравствуйте! Я искусственный интеллект-помощник адвокатского бюро "AL-RIZA MIZAN". Какой юридический вопрос вас интересует? Напишите ваш вопрос в поле ниже.' : 'Hello! I am the AI legal assistant of the "AL-RIZA MIZAN" advocacy bureau. What legal question interests you? Type your question in the field below.')}
+        </div>
+      </div>
+    `;
+    
+    conversationHistory.forEach((msg) => {
+      const text = msg.parts[0].text;
+      if (msg.role === 'user') {
+        chatHtml += `
+          <div class="chat-message user-msg" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-end; animation: fadeIn 0.3s ease;">
+            <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
+              <i class="fa-regular fa-user"></i> ${isUz ? 'Siz' : (isRu ? 'Вы' : 'You')}
+            </div>
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px 12px 0 12px; padding: 0.75rem 1.1rem; max-width: 85%; color: #ffffff; font-size: 0.95rem; line-height: 1.5; text-align: left; word-break: break-word; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              ${escapeHTML(text).replace(/\n/g, '<br>')}
+            </div>
+          </div>
+        `;
       } else {
-        aiSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing...';
+        chatHtml += `
+          <div class="chat-message ai-msg" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; animation: fadeIn 0.3s ease;">
+            <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
+              <i class="fa-solid fa-scale-balanced"></i> ${isUz ? 'AL-RIZA MIZAN AI' : (isRu ? 'ИИ-Адвокат AL-RIZA MIZAN' : 'AL-RIZA MIZAN AI')}
+            </div>
+            <div style="background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.22); border-radius: 12px 12px 12px 0; padding: 0.9rem 1.25rem; max-width: 85%; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; word-break: break-word; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+              ${renderMarkdown(text)}
+            </div>
+          </div>
+        `;
       }
+    });
+    
+    aiResponseText.innerHTML = chatHtml;
+    
+    // Automatically scroll to the bottom of the conversation window
+    setTimeout(() => {
+      aiResponseText.scrollTop = aiResponseText.scrollHeight;
+    }, 50);
+  }
 
-      try {
-        // Call the direct client-side Gemini API
-        let responseText = '';
+  // Bind to global window scope so that setLang can trigger it
+  window.updateChatDisplay = updateChatDisplay;
+
+  // Submit trigger handler
+  async function handleAISubmit() {
+    const question = aiQuestionText.value.trim();
+    if (!question) {
+      const isUz = !document.body.className.includes('lang-ru') && !document.body.className.includes('lang-en');
+      const isRu = document.body.className.includes('lang-ru');
+      alert(isUz ? 'Iltimos, savolingizni yozing.' : (isRu ? 'Пожалуйста, введите ваш вопрос.' : 'Please enter your question.'));
+      return;
+    }
+
+    // Determine current language
+    let lang = 'uz';
+    if (document.body.className.includes('lang-ru')) {
+      lang = 'ru';
+    } else if (document.body.className.includes('lang-en')) {
+      lang = 'en';
+    }
+
+    // Append user message to local context history
+    conversationHistory.push({ role: 'user', parts: [{ text: question }] });
+    updateChatDisplay();
+
+    // Clear input field and focus
+    aiQuestionText.value = '';
+    
+    // Add typing indicator / loading block
+    const isUz = lang === 'uz';
+    const isRu = lang === 'ru';
+    const loadingText = isUz ? 'Tahlil qilinmoqda...' : (isRu ? 'Анализ вопроса...' : 'Analyzing...');
+    
+    const typingIndicator = document.createElement('div');
+    typingIndicator.id = 'ai-typing-indicator';
+    typingIndicator.style.cssText = 'margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; animation: fadeIn 0.3s ease;';
+    typingIndicator.innerHTML = `
+      <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
+        <i class="fa-solid fa-spinner fa-spin"></i> ${loadingText}
+      </div>
+      <div style="background: rgba(212,175,55,0.01); border: 1px dashed rgba(212,175,55,0.2); border-radius: 12px 12px 12px 0; padding: 0.75rem 1.1rem; color: var(--gray); font-size: 0.95rem; font-style: italic; display: flex; align-items: center; gap: 0.5rem;">
+        <span>AI is working</span>
+        <span class="dot-typing" style="display: inline-flex; gap: 3px;"><span style="width: 5px; height: 5px; background: var(--gold); border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; animation-delay: -0.32s;"></span><span style="width: 5px; height: 5px; background: var(--gold); border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; animation-delay: -0.16s;"></span><span style="width: 5px; height: 5px; background: var(--gold); border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both;"></span></span>
+      </div>
+    `;
+    aiResponseText.appendChild(typingIndicator);
+    aiResponseText.scrollTop = aiResponseText.scrollHeight;
+
+    // Button Loading State
+    const originalBtnHtml = aiSubmitBtn.innerHTML;
+    aiSubmitBtn.disabled = true;
+    aiQuestionText.disabled = true;
+    if (aiBrainIcon) aiBrainIcon.className = 'fa-solid fa-spinner fa-spin';
+    aiSubmitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> ${loadingText}`;
+
+    try {
+      let responseText = '';
+
+      // Prepare payload with full conversation history
+      const apiPayload = {
+        question: question,
+        lang: lang,
+        history: conversationHistory
+      };
+
+      // 1. Try DIRECT Gemini client-side API call first if a key is available (supports double-clicking index.html/offline/VS Code files)
+      if (typeof GEMINI_API_KEY !== 'undefined' && GEMINI_API_KEY && GEMINI_API_KEY.trim() !== "") {
         try {
-          if (GEMINI_API_KEY && GEMINI_API_KEY !== "AQ.Ab8RN6L0FKOd-75OWf6ZjrPGrwn9RqaX28EeIERoKHM4vrAnKg" && GEMINI_API_KEY.trim() !== "") {
-            let systemInst = "Siz \"AL-RIZA MIZAN\" advokatlik byurosi professional va tajribali advokatisiz (Muhammadjon O'lmasov boshchiligidagi). Mijozga uning yozgan tilida (o'zbekcha) juda professional, aniq va ishonchli yuridik maslahat bering (O'zbekiston Respublikasi qonunchiligi asosida). Sizu biz deb murojaat qiling. DIQQAT: Javobingiz juda lo'nda, qisqa va aniq bo'lsin, o'rtacha 4-5 ta gapdan oshmasin! Keraksiz va o'ta uzun tushuntirishlarni mutlaqo chetlab o'ting.";
-            if (lang === 'ru') {
-              systemInst = "Вы являетесь профессиональным и опытным адвокатом адвокатского бюро \"AL-RIZA MIZAN\" (под руководством Мухаммаджона Улмасова). Предоставьте клиенту краткую, точную юридическую консультацию на русском языке на основе законодательства Республики Узбекистан. Будьте очень кратки, максимум 4-5 предложений! Избегайте длинных текстов.";
-            } else if (lang === 'en') {
-              systemInst = "You are a professional attorney at the \"AL-RIZA MIZAN\" advocacy bureau (led by Muhammadjon O'lmasov). Provide the client with brief, precise, and polite legal advice in English based on the legislation of the Republic of Uzbekistan. Your response must be very short and concise, averaging 4-5 sentences max.";
-            }
+          let systemInst = "Siz \"AL-RIZA MIZAN\" advokatlik byurosi professional va tajribali advokatisiz (Muhammadjon O'lmasov boshchiligidagi). Mijozga uning yozgan tilida (o'zbekcha) juda professional, aniq va ishonchli yuridik maslahat bering (O'zbekiston Respublikasi qonunchiligi asosida). Sizu biz deb murojaat qiling. DIQQAT: Javobingiz juda lo'nda, qisqa va aniq bo'lsin, o'rtacha 4-5 ta gapdan iborat bo'lsin va aslo undan oshmasin! Savol beruvchiga to'g'ri, xatosiz, ishonchli va aniq javob bering.";
+          if (lang === 'ru') {
+            systemInst = "Вы являетесь профессиональным и опытным адвокатом адвокатского бюро \"AL-RIZA MIZAN\" (под руководством Мухаммаджона Улмасова). Предоставьте клиенту краткую, точную юридическую консультацию на русском языке на основе законодательства Республики Узбекистан. Будьте очень кратки, максимум 4-5 предложений! Дайте абсолютно точный, надежный и безошибочный ответ.";
+          } else if (lang === 'en') {
+            systemInst = "You are a professional attorney at the \"AL-RIZA MIZAN\" advocacy bureau (led by Muhammadjon O'lmasov). Provide the client with brief, precise, and polite legal advice in English based on the legislation of the Republic of Uzbekistan. Your response must be very short and concise, averaging 4-5 sentences max, and completely accurate without mistakes.";
+          }
 
-            const rawResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
+          // Use the latest gemini-2.5-flash or gemini-1.5-flash for browser client calls
+          const rawResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              contents: conversationHistory,
+              systemInstruction: {
+                parts: [{ text: systemInst }]
               },
-              body: JSON.stringify({
-                contents: [{
-                  parts: [{ text: question }]
-                }],
-                systemInstruction: {
-                  parts: [{ text: systemInst }]
-                },
-                generationConfig: {
-                  temperature: 0.6
-                }
-              })
-            });
-
-            if (rawResponse.ok) {
-              const resData = await rawResponse.json();
-              if (resData && resData.candidates && resData.candidates[0] && resData.candidates[0].content && resData.candidates[0].content.parts && resData.candidates[0].content.parts[0]) {
-                responseText = resData.candidates[0].content.parts[0].text;
+              generationConfig: {
+                temperature: 0.3
               }
-            } else {
-              console.warn("Direct Gemini API response was not OK, falling back to local advice.");
+            })
+          });
+
+          if (rawResponse.ok) {
+            const resData = await rawResponse.json();
+            if (resData && resData.candidates && resData.candidates[0] && resData.candidates[0].content && resData.candidates[0].content.parts && resData.candidates[0].content.parts[0]) {
+              responseText = resData.candidates[0].content.parts[0].text;
             }
           } else {
-            console.warn("GEMINI_API_KEY is not configured or left as placeholder, using high-fidelity local legal logic");
+            console.warn("Direct client-side API response failed. Trying server-side backend fallback.");
+          }
+        } catch (directApiErr) {
+          console.warn("Direct client-side API call threw an error. Trying server-side backend fallback:", directApiErr);
+        }
+      }
+
+      // 2. Try SERVER-SIDE backend API call as fallback if direct call is disabled/unsuccessful
+      if (!responseText) {
+        try {
+          const rawResponse = await fetch('/api/gemini', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(apiPayload)
+          });
+
+          if (rawResponse.ok) {
+            const resData = await rawResponse.json();
+            if (resData && resData.text) {
+              responseText = resData.text;
+            }
+          } else {
+            console.warn("Server-side proxy API response failed. Trying dynamic smart fallback.");
           }
         } catch (apiErr) {
-          console.warn("Direct API call bypassed or failed, using high-fidelity local legal logic:", apiErr);
+          console.warn("Server-side proxy API call threw an error. Trying dynamic smart fallback:", apiErr);
         }
+      }
 
-        // If real API failed or returned empty (e.g., due to CORS or key constraints), resolve using smart local dictionary
-        if (!responseText) {
-          // Wait 1.1 seconds for realistic loading experience
-          await new Promise(resolve => setTimeout(resolve, 1100));
-          responseText = getSmartLocalAdvice(question, lang);
-        }
+      // 3. Fallback to offline local rules if absolutely no network response is obtained
+      if (!responseText) {
+        // Mock a realistic thinking time
+        await new Promise(resolve => setTimeout(resolve, 800));
+        responseText = getSmartLocalAdvice(question, lang);
+      }
 
-        // Set and reveal response
-        aiResponseText.textContent = responseText;
-        aiFormBlock.style.display = 'none';
-        aiResponseContainer.style.display = 'block';
-        aiResponseContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Remove typing indicator
+      const indicatorEl = document.getElementById('ai-typing-indicator');
+      if (indicatorEl) indicatorEl.remove();
 
-      } catch (err) {
-        console.error("Critical AI error:", err);
-        const isUz = !document.body.className.includes('lang-ru') && !document.body.className.includes('lang-en');
-        const isRu = document.body.className.includes('lang-ru');
-        aiResponseText.textContent = isUz ? "Xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring." : (isRu ? 'Произошла ошибка системы. Пожалуйста, попробуйте позже.' : 'A system error occurred. Please try again later.');
-        aiFormBlock.style.display = 'none';
-        aiResponseContainer.style.display = 'block';
-      } finally {
-        aiSubmitBtn.disabled = false;
-        aiSubmitBtn.innerHTML = originalBtnHtml;
-        if (aiBrainIcon) aiBrainIcon.className = 'fa-solid fa-brain';
+      // Append AI response to context history
+      conversationHistory.push({ role: 'model', parts: [{ text: responseText }] });
+      updateChatDisplay();
+
+    } catch (err) {
+      console.error("Critical AI error:", err);
+      const indicatorEl = document.getElementById('ai-typing-indicator');
+      if (indicatorEl) indicatorEl.remove();
+
+      const errMsg = isUz ? "Tizimda xatolik yuz berdi. Iltimos, qayta urinib ko'ring." : (isRu ? 'Произошла ошибка системы. Пожалуйста, попробуйте еще раз.' : 'A system error occurred. Please try again.');
+      conversationHistory.push({ role: 'model', parts: [{ text: errMsg }] });
+      updateChatDisplay();
+    } finally {
+      aiSubmitBtn.disabled = false;
+      aiQuestionText.disabled = false;
+      aiSubmitBtn.innerHTML = originalBtnHtml;
+      if (aiBrainIcon) aiBrainIcon.className = 'fa-solid fa-brain';
+      aiQuestionText.focus();
+    }
+  }
+
+  // Click handler
+  if (aiSubmitBtn && aiQuestionText && aiResponseContainer && aiResponseText) {
+    aiSubmitBtn.addEventListener('click', handleAISubmit);
+
+    // Support Enter Key to Submit & Shift+Enter for New Line
+    aiQuestionText.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault(); // prevent default carriage return
+        handleAISubmit();
       }
     });
   }
 
-  if (aiAskNewBtn && aiQuestionText && aiResponseContainer && aiFormBlock) {
-    aiAskNewBtn.addEventListener('click', () => {
+  if (aiClearBtn && aiQuestionText) {
+    aiClearBtn.addEventListener('click', () => {
+      conversationHistory = [];
       aiQuestionText.value = '';
-      aiResponseContainer.style.display = 'none';
-      aiFormBlock.style.display = 'block';
+      updateChatDisplay();
       aiQuestionText.focus();
     });
   }
