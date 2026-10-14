@@ -588,7 +588,8 @@
   </section>
 
   <!-- ═══════════════════════════════════════ BEPUL MASLAHAT (AI CONSULTATION) ═══════════════════════════════ -->
-  <section id="ai-consultation" class="section-dark" style="background: var(--navy-dark); border-top: 1px solid rgba(212,175,55,0.1); padding: 5rem 0;">
+  <section id="ai-consultation" class="section-dark"
+    style="background: var(--navy-dark); border-top: 1px solid rgba(212,175,55,0.1); padding: 5rem 0;">
     <div class="section-eyebrow">
       <span data-lang-inline="uz">AI Maslahat</span>
       <span data-lang-inline="ru">AI Консультация</span>
@@ -601,34 +602,48 @@
     </h2>
     <div class="section-divider"></div>
     <p class="section-desc reveal">
-      <span data-lang-inline="uz">Huquqiy masalangizni yozing va sun'iy intellekt advokatimizdan lahzada bepul maslahat oling.</span>
-      <span data-lang-inline="ru">Опишите свой юридический вопрос и получите мгновенную бесплатную консультацию от нашего ИИ-адвоката.</span>
-      <span data-lang-inline="en">Describe your legal issue and receive an instant free consultation from our AI advocate.</span>
+      <span data-lang-inline="uz">Huquqiy masalangizni yozing va sun'iy intellekt advokatimizdan lahzada bepul maslahat
+        oling.</span>
+      <span data-lang-inline="ru">Опишите свой юридический вопрос и получите мгновенную бесплатную консультацию от
+        нашего ИИ-адвоката.</span>
+      <span data-lang-inline="en">Describe your legal issue and receive an instant free consultation from our AI
+        advocate.</span>
     </p>
 
-    <div class="contact-centered-wrapper reveal" style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: center; width: 100%;">
-      <div class="contact-form" style="width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 2.5rem 2rem;">
+    <div class="contact-centered-wrapper reveal"
+      style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: center; width: 100%;">
+      <div class="contact-form"
+        style="width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 2.5rem 2rem;">
         <div class="form-title" style="margin-bottom: 1.5rem; text-align: center;">
           <span data-lang-inline="uz">Savolingizni ushbu oynaga yo'llang</span>
           <span data-lang-inline="ru">Отправьте ваш вопрос в это окно</span>
           <span data-lang-inline="en">Submit your question in this window</span>
         </div>
-        
+
         <!-- Consultation Result Container (Chat History, Always Visible) -->
-        <div id="ai-response-container" style="display: block; margin-bottom: 1.5rem; padding: 1.5rem; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(212,175,55,0.22); border-radius: 10px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);">
-          <div id="ai-response-text" style="color: #e2e8f0; font-size: 1rem; line-height: 1.7; white-space: pre-wrap; font-family: 'Montserrat', sans-serif; max-height: 380px; overflow-y: auto; padding-right: 0.5rem;">
+        <div id="ai-response-container"
+          style="display: block; margin-bottom: 1.5rem; padding: 1.5rem; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(212,175,55,0.22); border-radius: 10px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);">
+          <div id="ai-response-text"
+            style="color: #e2e8f0; font-size: 1rem; line-height: 1.7; white-space: pre-wrap; font-family: 'Montserrat', sans-serif; max-height: 380px; overflow-y: auto; padding-right: 0.5rem;">
             <!-- Initial Greeting Message -->
-            <div class="chat-message ai-msg" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; animation: fadeIn 0.3s ease;">
-              <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
+            <div class="chat-message ai-msg"
+              style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; animation: fadeIn 0.3s ease;">
+              <div
+                style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem;">
                 <i class="fa-solid fa-scale-balanced"></i>
                 <span data-lang-inline="uz">AL-RIZA MIZAN AI Advokati</span>
                 <span data-lang-inline="ru">ИИ-Адвокат AL-RIZA MIZAN</span>
                 <span data-lang-inline="en">AL-RIZA MIZAN AI Advocate</span>
               </div>
-              <div style="background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.22); border-radius: 12px 12px 12px 0; padding: 0.9rem 1.25rem; max-width: 85%; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; word-break: break-word; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
-                <span data-lang-inline="uz">Assalomu alaykum! Men "AL-RIZA MIZAN" advokatlik byurosi sun'iy intellekt yordamchisiman. Sizni qanday huquqiy savol qiziqtirmoqda? Savolingizni quyidagi maydonga yozing.</span>
-                <span data-lang-inline="ru">Здравствуйте! Я искусственный интеллект-помощник адвокатского бюро "AL-RIZA MIZAN". Какой юридический вопрос вас интересует? Напишите ваш вопрос в поле ниже.</span>
-                <span data-lang-inline="en">Hello! I am the AI legal assistant of the "AL-RIZA MIZAN" advocacy bureau. What legal question interests you? Type your question in the field below.</span>
+              <div
+                style="background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.22); border-radius: 12px 12px 12px 0; padding: 0.9rem 1.25rem; max-width: 85%; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; word-break: break-word; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+                <span data-lang-inline="uz">Assalomu alaykum! Men "AL-RIZA MIZAN" advokatlik byurosi sun'iy intellekt
+                  yordamchisiman. Sizni qanday huquqiy savol qiziqtirmoqda? Savolingizni quyidagi maydonga
+                  yozing.</span>
+                <span data-lang-inline="ru">Здравствуйте! Я искусственный интеллект-помощник адвокатского бюро "AL-RIZA
+                  MIZAN". Какой юридический вопрос вас интересует? Напишите ваш вопрос в поле ниже.</span>
+                <span data-lang-inline="en">Hello! I am the AI legal assistant of the "AL-RIZA MIZAN" advocacy bureau.
+                  What legal question interests you? Type your question in the field below.</span>
               </div>
             </div>
           </div>
@@ -636,26 +651,39 @@
 
         <div id="ai-form">
           <div class="form-group full" style="margin-bottom: 1rem;">
-            <textarea id="ai-question" placeholder="Sizni qaysi huquqiy masala qiziqtirmoqda? Masalan: sud ishlari, meros, oilaviy nizolar, shartnomalar yoki boshqa turlar..." required style="width: 100%; min-height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; color: #ffffff; padding: 1rem 1.25rem; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.5; resize: none; outline: none; transition: border-color 0.3s; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);" onfocus="this.style.borderColor='var(--gold)';" onblur="this.style.borderColor='rgba(212,175,55,0.3)';"></textarea>
+            <textarea id="ai-question"
+              placeholder="Sizni qaysi huquqiy masala qiziqtirmoqda? Masalan: sud ishlari, meros, oilaviy nizolar, shartnomalar yoki boshqa turlar..."
+              required
+              style="width: 100%; min-height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; color: #ffffff; padding: 1rem 1.25rem; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.5; resize: none; outline: none; transition: border-color 0.3s; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);"
+              onfocus="this.style.borderColor='var(--gold)';"
+              onblur="this.style.borderColor='rgba(212,175,55,0.3)';"></textarea>
           </div>
           <div style="display: flex; gap: 0.75rem; width: 100%;">
-            <button type="button" id="ai-submit-btn" class="form-submit" style="flex: 1; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.75rem; height: 50px; margin: 0; padding: 0 1.5rem; border-radius: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s;">
+            <button type="button" id="ai-submit-btn" class="form-submit"
+              style="flex: 1; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.75rem; height: 50px; margin: 0; padding: 0 1.5rem; border-radius: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s;">
               <i class="fa-solid fa-brain" id="ai-brain-icon"></i>
               <span data-lang-inline="uz">Yuborish</span>
               <span data-lang-inline="ru">Отправить</span>
               <span data-lang-inline="en">Send</span>
             </button>
-            <button type="button" id="ai-clear-btn" class="btn-outline" style="width: 50px; height: 50px; border: 1px solid rgba(212,175,55,0.35); border-radius: 8px; background: rgba(255, 255, 255, 0.02); color: var(--gold); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-size: 1.1rem; padding: 0;" title="Suhbatni tozalash / Очистить чат / Clear chat">
+            <button type="button" id="ai-clear-btn" class="btn-outline"
+              style="width: 50px; height: 50px; border: 1px solid rgba(212,175,55,0.35); border-radius: 8px; background: rgba(255, 255, 255, 0.02); color: var(--gold); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-size: 1.1rem; padding: 0;"
+              title="Suhbatni tozalash / Очистить чат / Clear chat">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           </div>
         </div>
 
         <div style="margin-top: 1.5rem; border-top: 1px solid rgba(212,175,55,0.15); padding-top: 1rem;">
-          <p style="color: var(--gray); font-style: italic; font-size: 0.75rem; margin: 0; text-align: center; line-height: 1.4;">
-            <span data-lang-inline="uz">*Eslatma: Sun'iy intellekt advokatining maslahati dastlabki ma'lumot hisoblanadi. Aniqroq tahlil va sud himoyasi uchun bizning idoramizga murojaat qilishni maslahat beramiz.</span>
-            <span data-lang-inline="ru">*Примечание: Консультация ИИ носит предварительный характер. Для детального анализа и судебной защиты рекомендуем обратиться в наше бюро.</span>
-            <span data-lang-inline="en">*Note: AI consultation is informational. For detailed analysis and court defense, we recommend contacting our executive office directly.</span>
+          <p
+            style="color: var(--gray); font-style: italic; font-size: 0.75rem; margin: 0; text-align: center; line-height: 1.4;">
+            <span data-lang-inline="uz">*Eslatma: Sun'iy intellekt advokatining maslahati dastlabki ma'lumot
+              hisoblanadi. Aniqroq tahlil va sud himoyasi uchun bizning idoramizga murojaat qilishni maslahat
+              beramiz.</span>
+            <span data-lang-inline="ru">*Примечание: Консультация ИИ носит предварительный характер. Для детального
+              анализа и судебной защиты рекомендуем обратиться в наше бюро.</span>
+            <span data-lang-inline="en">*Note: AI consultation is informational. For detailed analysis and court
+              defense, we recommend contacting our executive office directly.</span>
           </p>
         </div>
       </div>
@@ -729,23 +757,23 @@
               <div class="contact-label"><span data-lang-inline="uz">Lokatsiya</span><span
                   data-lang-inline="ru">Локация</span><span data-lang-inline="en">Location</span></div>
               <div class="contact-value">
-                <span data-lang-inline="uz">Sirdaryo viloyati, Guliston shahri</span>
-                <span data-lang-inline="ru">Сырдарьинская область, город Гулистан</span>
-                <span data-lang-inline="en">Syrdarya region, Gulistan city</span>
+                <span data-lang-inline="uz">Sirdaryo viloyati, Guliston shahri (Joylashuvda ko'rsatilgan)</span>
+                <span data-lang-inline="ru">Сырдарьинская область, город Гулистан (Указано в месте)</span>
+                <span data-lang-inline="en">Syrdarya region, Gulistan city (Shown in the location)</span>
               </div>
             </div>
           </div>
           <div class="map-iframe-container"
             style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,0.3); margin-top: 1rem; width: 100%;">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.0725287702652!2d68.77947857648316!3d40.513657971424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfa4a4421d11347%3A0x6e634604f8113c2c!2sADVOKATURA%20AL%20RIZA%20MIZAN!5e0!3m2!1sen!2s!4v1717511400000"
-              width="100%" height="340" style="border:0; display: block;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d577.812418280603!2d68.7628333!3d40.49172219999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDI5JzMwLjIiTiA2OMKwNDUnNDYuMiJF!5e1!3m2!1sru!2s!4v1791979493383!5m2!1sru!2s"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <div style="margin-top: 0.75rem; text-align: center;">
-            <a href="https://maps.app.goo.gl/hEk3f4fVtB8SubUX8" target="_blank" rel="noopener noreferrer"
+            <a href="https://maps.app.goo.gl/HpXooXjGZEbZSv716" target="_blank" rel="noopener noreferrer"
               style="color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.3s;">
-              <span>https://maps.app.goo.gl/hEk3f4fVtB8SubUX8</span>
+              <span>https://maps.app.goo.gl/HpXooXjGZEbZSv716</span>
               <span>↗</span>
             </a>
           </div>
